@@ -1,0 +1,31 @@
+\documentclass{article}
+\begin{document}
+   \section{Dimostrazione per Induzione}
+   Dato $n$ qualunque se e' vera $P(n)$,allora e' vera anche $P(n+1)$
+   \subsection{Base dell'induzione}
+   Verificare $P(1)$
+   \subsection{Passo Induttivo}
+   Supponendo che $P(n)$ sia vero, ne consegue che $P(n+1)$ e' vera.In altri termini
+   $P(n)\to P(n+1)$ vera.
+   \section{Esempio dimostrazione per induzione}
+   \begin{equation}
+    \sum_{i=1}^n=\frac{n(n+1)}{2}
+   \end{equation}
+   \subsection{Base dell induzione}
+   OK
+   \subsection{Passo Induttivo}
+   Prendiamo $k\in N$ qualunque
+   \begin{equation}
+     P(k)=\sum_{i=1}^k i= \frac{k(k+1)}{2}\
+   \end{equation}
+   \begin{equation}
+     P(k+1)=\sum_{i=1}^{k+1} i= \frac{(k+1)(k+2)}{2}
+   \end{equation}
+   \begin{equation}
+    \sum_{i=1}^{k+1} i=\sum_{i=1}^k i+(k+1)
+   \end{equation}
+   Equivale a dire
+   \begin{equation}
+    \frac{(k+1)(k+2)}{2}=\frac{(k+1)(k+2)}{2}
+   \end{equation}
+\end{document}

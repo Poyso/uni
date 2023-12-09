@@ -1,0 +1,47 @@
+\documentclass{article}
+\title{Programmazione}
+\usepackage{listings}
+\begin{document}
+    \section{Python}
+    \subsection{Esercizio: controllare se la parola e palindroma}
+    \begin{flushleft}
+       Una parola palindroma essenzialmente e' una parola che si puo leggere in entrambi i vers E.g: otto,anna,radar,etc
+       \subsection{L'algoritmo}
+       \begin{flushleft}
+        Per scrivere questo programma basterebbe far partire un loop dalla lunghezza della stringa, e salvare ogni carattere in quell'ordine
+        in un altra stringa e infine confrontarle. Ma questo implica un sacco di passaggi quindi un altro modo per farlo che riduce il tempo
+        di questo e' creare una funzione che \textbf{simmetricamente} controlla la prima lettera e l'ultima lettera se sono uguali.Non appena
+        la funzione legge 2 lettere diverse ritorna il valore falso alla funzione, invece se non trova disuguaglianze continua finche non controlla
+        tutta la stringa e a quel punto restuira alla funzione il valore booleano vero.\\
+        \begin{lstlisting}[language=Python]
+            def palindromo(a):
+                i,n = 0, len(a)
+                while i < n // 2:
+                    if a[i] != a[-i-1]: # indici negativi
+                        return False
+                    i+=1
+                return True
+        \end{lstlisting}
+        a[-i-1] rappresenta l'uso dell indici negativi in python, infatti per rappresentare l ultimo elemento di una stringa/array
+        si possono usare gli indici negativi.
+        \begin{flushleft}
+            E.g: [-1] $\to$ ultima posizione della stringa, [-2] $\to$ penultima posizione della stringa
+        \end{flushleft}
+        \subsection{Come estrarre una porzione di stringa/array}
+        \begin{flushleft}
+            Si puo estrapolare un certo contenuto di una stringa immettendo la posizione di inizio e la posizione di fine
+            \begin{lstlisting}[language=Python]
+                x="0123456789"
+                print(x[3:7])
+            \end{lstlisting}
+            Il 3 indicato sopra rappresenta l inzizio e il rappresenta la fine e questo codice come risultato riporta: 3456\\
+            Si possono anche impostare i passi, cioe' quanti salti deve fare ogni volta che legge un carattere (defualt=1)
+            \begin{lstlisting}[language=Python]
+                x="0123456789"
+                print(x[3:7:2]
+            \end{lstlisting}
+            Questo stampera come risultato solo "35": perche quando arriva a 3 salta il 4 e scrive il 5.
+        \end{flushleft}
+       \end{flushleft}
+    \end{flushleft}
+\end{document}

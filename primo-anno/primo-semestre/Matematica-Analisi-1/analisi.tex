@@ -1,0 +1,1321 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\title{Matematica Analisi}
+\begin{document}
+   \section{Principio di Induzione con Esempio}
+   \begin{flushleft}
+    Il principio di Induzione serve a dimostrare che data una espressione $P(n)$ e supponendo che sia vera allora e' vero anche $P(n+1)$ e cosi via
+   \end{flushleft}
+   \subsection{Esempio dimostrazione con il principio di induzione}
+   \begin{flushleft}
+    Dimostriamo per induzione:
+    \begin{equation}
+        (a+b)^n= \sum_{k=0}^{n}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^kb^{n-k}
+    \end{equation}
+    Ricordiamo qualche formula:
+    \begin{equation}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}=\frac{n!}{k!(n-k)!}
+    \end{equation}
+    \begin{equation}
+        \begin{pmatrix}
+            n+1\\
+            k
+        \end{pmatrix}=\begin{pmatrix}
+                        n\\
+                        k-1
+                      \end{pmatrix}+\begin{pmatrix}
+                                       n\\
+                                       k
+                                     \end{pmatrix}
+    \end{equation}
+    Ora andiamo a risolvere l esercizio. Il principio di induzione applica 2 "passi":
+    \begin{itemize}
+    \item il passo base che prendendo un numero a caso verifichiamo che $P(1)$ (1 in questo caso) sia verificata.
+    \item il passo induttivo che supponendo che $P(n)$ sia vera, confermiamo anche che $P(n+1)$ sia vera per qualsiasi n (non qualsiasi! Dipende dall insieme in cui ci troviamo e cosa richiede l esercizio)
+    \end{itemize}
+   \subsection{Passo Base}
+   Applichiamo il passo base mettendo come valore 1 $n=1$ oppure $P(1)$
+   \begin{equation}
+        (a+b)^1= \sum_{k=0}^{1}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^kb^{n-k}
+   \end{equation}
+   Completando i semplici calcoli notiamo che entrambe le espressioni sia quella di destra che di sinsitra riportano 1 come valore finale
+   \subsection{Passo Induttivo}
+    Ora dimostrare che $P(n) \implies P(n+1)$\\
+    Riscriviamo la funzione $P(n+1)$
+    \begin{equation}
+        (a+b)^{n+1}= \sum_{k=0}^{n+1}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^kb^{n-k}
+    \end{equation}
+    L'espressione sopra puo essere riscritta come:
+
+    \begin{equation}
+       (a+b)^{n+1}=(a+b)^n(a+b)
+    \end{equation}
+
+    \begin{equation}
+        \sum_{k=0}^{n+1}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^kb^{n-k}=(a+b)
+        \sum_{k=0}^{n}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^kb^{n-k}=
+        \sum_{k=0}^{n}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^{k+1}b^{n-k}+
+        \sum_{k=0}^{n}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^{k}b^{n+1-k}=
+    \end{equation}
+    NON HO CAPITO
+    \begin{equation}
+       = \sum_{k=1}^{n+1}
+        \begin{pmatrix}
+            n\\
+            k-1
+        \end{pmatrix}a^{k}b^{n+1-k}+
+        \sum_{k=0}^{n}
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix}a^{k}b^{n+1-k}+a^{n+1}+b^{n+1}=
+    \end{equation}
+    \begin{equation}
+       = \sum_{k=1}^{n+1}(
+        \begin{pmatrix}
+            n\\
+            k-1
+        \end{pmatrix}+
+        \begin{pmatrix}
+            n\\
+            k
+        \end{pmatrix})
+        a^{k}b^{n+1-k}\quad \square
+    \end{equation}
+    la formula si conclude applicando la formula $(3)$ alle matrici
+   \end{flushleft}
+   \section{Limiti}
+   \subsection{Definizioni}
+   Sia $A \subseteq \mathbb{R}$ con $A \neq 0$
+   \begin{flushleft}
+    $M_x \in \mathbb{R}$ si dice \textbf{MAGGIORANTE} di A se
+    \begin{equation}
+       \forall a \in A \quad a\leq M_x
+    \end{equation}
+    $m_x \in \mathbb{R}$ si dice \textbf{MINORANTE} di A se
+    \begin{equation}
+       \forall a \in A \quad a\geq m_x
+    \end{equation}
+    $M \in \mathbb{R}$ si dice \textbf{MASSIMO} di A se
+    \begin{equation}
+       \forall a \in A \quad a\leq M \quad M\in A
+    \end{equation}
+    $m \in \mathbb{R}$ si dice \textbf{MINIMO} di A se
+    \begin{equation}
+       \forall a \in A \quad a\geq m \quad m\in A
+    \end{equation}
+    A si dice \textbf{LIMITATO SUPERIORMENTE} se (A ha almeno un maggiorante)
+    \begin{equation}
+     \exists M_x \in \mathbb{R}\quad : \quad \forall a \in A \quad a\leq M_x
+    \end{equation}
+    A si dice \textbf{LIMITATO INFERIORMENTE} se (A ha almeno un minorante)
+    \begin{equation}
+     \exists m_x \in \mathbb{R}\quad : \quad \forall a \in A \quad a\geq m_x
+    \end{equation}
+   \end{flushleft}
+    \begin{flushleft}
+    \subsection{Esempi}
+        Inizializziamo 2 insiemi:
+        \begin{itemize}
+           \item $A = \mathbb{N}=\{ 1,2,3,4...\}$
+               \begin{itemize}
+                 \item L'insieme dei maggioranti e' vuoto
+                 \item L'insieme dei minoranti e' $(-\infty,o]$
+                 \item A non e' limitato. min(A)=0, A non ha massimo
+               \end{itemize}
+           \item $A = (-2,1) \cup [2,3]$
+               \begin{itemize}
+                 \item L'insieme dei maggioranti e' $[3, +\infty)$
+                 \item L'insieme dei minoranti e' $(-\infty,-2]$
+                 \item A e' limitato. min(A)=3, A non ha minimo
+               \end{itemize}
+        \end{itemize}
+    \end{flushleft}
+    \subsection{Assioma di completezza}
+    \begin{flushleft}
+    Sia $A \subseteq \mathbb{R}$ con $A \neq 0$
+        \begin{itemize}
+            \item Se A e' limitato superiormente allora l' insieme dei maggioranti di A ha un elemento minimo
+            che si dice \textbf{ESTREMO SUPERIORE} di A e si scrive $sup(A)$.
+            \item Se A e' limitato inferiormente allora l' insieme dei minoranti di A ha un elemento massimo
+            che si dice \textbf{ESTREMO INFERIORE} di A e si scrive $inf(A)$.
+        \end{itemize}
+        La definzione di sup e inf si estende algi insiemi non limitati:
+        \begin{itemize}
+            \item $sup(A)=+\infty$ se A non e' limitato superiormente
+            \item $sup(A)=-\infty$ se A non e' limitato inferiormente
+        \end{itemize}
+        Osservazione
+        \begin{itemize}
+            \item Se A ha un massimo allora $max(A)=sup(A)$
+            \item Se A ha un minimo allora $min(A)=inf(A)$
+        \end{itemize}
+        \subsection{Esempi}
+        \begin{itemize}
+            \item $A = \mathbb{N} \rightarrow inf(A)=min(A)=0$ e $sup(A)=+\infty$
+            \item $A = (-2,1)\cup[2,3]\rightarrow inf(A)=-2$ e $sup(A)=max(A)=3$
+            \item $A = \{\frac{1}{n}:n\in \mathbb{N}^+\}=\{1,\frac{1}{2},\frac{1}{3},\frac{1}{4},..\}\quad sup(A)=max(A)=1$,$inf(A)=0$\\ A non ha minimo.
+        \end{itemize}
+        \subsection{Proprieta e caratteristiche di sup e inf}
+        \subsubsection{Proprieta dell inf}
+        \begin{flushleft}
+        Caratteristiche dell inf:
+            \begin{itemize}
+                \item $inf(A)=-\infty \iff \forall M \in \mathbb{R} \quad \exists a \in A \quad : \quad a<M$
+                \begin{flushright}
+                   Dato un qualsiasi numero M esiste un elemento di A piu' piccolo di M
+                \end{flushright}
+                \item $inf(A)=l\in \mathbb{R} \iff$
+                \begin{equation}
+                    \begin{cases}
+                        \forall a \in A \quad l \leq a \quad \text{(l e' un minorante)}\\
+                        \forall \epsilon >0 \quad \exists a \in A \quad : \quad a<l+\epsilon \quad \text{(ogni numero piu' grande di l non e' un minorante di A)}
+                    \end{cases}
+                \end{equation}
+            \end{itemize}
+        \end{flushleft}
+        \subsubsection{Proprieta del sup}
+        \begin{flushleft}
+        Caratteristiche del sup:
+            \begin{itemize}
+                \item $inf(A)=+\infty \iff \forall M \in \mathbb{R} \quad \exists a \in A \quad : \quad a>M$
+                \begin{flushright}
+                   Dato un qualsiasi numero M esiste un elemento di A piu' grande di M
+                \end{flushright}
+                \item $inf(A)=l\in \mathbb{R} \iff$
+                \begin{equation}
+                    \begin{cases}
+                        \forall a \in A \quad l \geq a \quad \text{(l e' un maggiorante)}\\
+                        \forall \epsilon >0 \quad \exists a \in A \quad : \quad a>l-\epsilon \quad \text{(ogni numero piu' grande di l non e' un minorante di A)}
+                    \end{cases}
+                \end{equation}
+            \end{itemize}
+        \end{flushleft}
+        \subsubsection{Esempi}
+        % scrivere l esempio di x+5/x
+        \subsection{Successione reale}
+        \begin{flushleft}
+            Una successione reale e' data una funzione dove questa parte da $n>n_0$ e continua per infinito
+            \begin{equation}
+                \{ a_n \}_{n \geq n_0}
+            \end{equation}
+            E.g
+            \begin{equation}
+                \{ \frac{(-1)^n}{n} \}_{n \geq 1}
+            \end{equation}
+        \end{flushleft}
+        \subsection{Limiti di successione}
+        \begin{flushleft}
+            \begin{equation}
+                \lim_{n \to +\infty} a_n
+            \end{equation}
+            \begin{flushleft}
+               Vengono definiti in:
+               \begin{itemize}
+                   \item $ +\infty \quad \forall M \in \mathbb{R} \quad \exists N \geq n_0:\forall n \geq N \quad a_n > M$
+                   \item $ -\infty \quad \forall M \in \mathbb{R} \quad \exists N \geq n_0:\forall n \geq N \quad a_n < M$
+                   \item $ l=\mathbb{R} \quad \forall M \in \mathbb{R} \quad \exists N \geq n_0:\forall n \geq N \quad |l-a_n|<\epsilon$
+                   \item non esiste altrimenti
+               \end{itemize}
+            \subsubsection{Esempi}
+            \begin{flushleft}
+               % esempi sui limiti e le proprieta sopra
+            \end{flushleft}
+            \subsection{Proprieta' dei limiti di successione}
+                \subsubsection{Unicita' del limite}
+                \begin{flushleft}
+                    Tutti i casi mostriati nel paragrafo 2.7 sono distinti tra loro cioe
+                    non e' possibile che piu di quei casi si avverano per lo stesso limite
+                    % ci sarebbe da mettere la dimostrazione
+                \end{flushleft}
+                \subsubsection{bo}
+                \begin{flushleft}
+                    Se $\lim_{n \to \infty} a_n \quad a_n \in \mathbb{R}$ allora la sua successione e' limitata\\
+                    $\{(-1)^n\}$ e' limitata ma non ha limiti
+                \end{flushleft}
+                \subsubsection{bo}
+                \begin{flushleft}
+                    se $\lim_{n \to \infty} a_n $ esiste allora ogni sottosuccessione $\{a_n\}$ ha lo stesso limite
+                \end{flushleft}
+            \end{flushleft}
+                \subsubsection{Permanenza del segno}
+                \begin{flushleft}
+                    se $\lim_{n \to \infty} a_n  \in \mathbb{R} \cup \{+\infty\}$ allora definitivamente $a_n > 0$
+                \end{flushleft}
+                \subsubsection{Confronto}
+                \begin{flushleft}
+                    Dati i seguenti limiti
+                    \begin{equation}
+                        \lim_{n\to+\infty} a_n = l_1,\quad  \lim_{n\to+\infty} b_n = l_2
+                    \end{equation}
+                    Definitivamente $a_n \leq b_n \iff l_1 \leq l_2$
+                \end{flushleft}
+                \subsubsection{Doppio Confronto}
+                \begin{flushleft}
+                    Dati i seguenti limiti
+                    \begin{equation}
+                        \lim_{n\to+\infty} a_n = l,\quad  \lim_{n\to+\infty} b_n = l
+                    \end{equation}
+                    Definitivamente $a_n \leq c_n \leq b_n$ allora
+                    \begin{equation}
+                        \lim_{n\to+\infty} c_n=l
+                    \end{equation}
+                \end{flushleft}
+                \subsubsection{bo}
+                \begin{flushleft}
+                    se $\lim_{n \to \infty} a_n =0 $ e $\{ b_n \}$ e' una sottosuccessione limitata allora
+                    \begin{equation}
+                        \lim_{n\to+\infty} a_n * b_n =0
+                    \end{equation}
+                \end{flushleft}
+                \subsubsection{Algebra dei limiti}
+                \begin{flushleft}
+                    Sia $\lim_{n\to+\infty} a_n = l_1$, $\lim_{n\to+\infty} a_n = l_1$ $l_1,l_2 \in \mathbb{R}$ allora
+                    \begin{equation}
+                        \lim_{n\to+\infty} (a_n + b_n)=l_1+l_2
+                    \end{equation}
+                    \begin{equation}
+                        \lim_{n\to+\infty} (a_n * b_n)=l_1*l_2
+                    \end{equation}
+                    \begin{equation}
+                        \lim_{n\to+\infty} (\frac{a_n}{b_n})=(\frac{l_1}{l_2}) \quad l_2 \neq 0
+                    \end{equation}
+                \end{flushleft}
+                \subsubsection{Limite di una successione monotona}
+                \begin{flushleft}
+                    se $a_n \leq a_{n+1}, \forall n \geq n_0$ (funzione crescente)
+                    \begin{equation}
+                        \lim_{n\to+\infty} a_n=sup\{a_n:n\geq n_0\}
+                    \end{equation}
+                    se $a_n \geq a_{n+1}, \forall n \geq n_0$ (funzione decrescente)
+                    \begin{equation}
+                        \lim_{n\to+\infty} a_n=sup\{a_n:n\geq n_0\}
+                    \end{equation}
+                \end{flushleft}
+                \subsubsection{bo}
+                \begin{flushleft}
+                   Per le funzioni elementari
+                    \begin{equation}
+                        |x|,n^n,a^x,log(x),sen(x),cos(x),tg(x),arccos(x),arcsen(x),arctg(x)
+                    \end{equation}
+                    \\se $a \to l\in D$ allora $f(a_n)\to f(l)$
+                \end{flushleft}
+                \subsubsection{Esempi}
+                \begin{equation}
+                    \lim_{n\to+\infty} log(sin(\frac{1}{2}) + 2cos(\frac{2}{n^2+1})) = log(2)
+                \end{equation}
+                Sostituendo infinito a n riusciamo forse a trovare il risultato
+                \subsection{Altre proprieta dei limiti}
+                \begin{flushleft}
+                    \begin{itemize}
+                        \item $\lim_{n\to+\infty} a^n =$
+                            \begin{itemize}
+                             \item +$\infty$ se $a>1$
+                             \item $1$ se $a=1$
+                             \item $0$ se $a<1$
+                            \end{itemize}
+                        \item $\lim_{n\to+\infty} log_a(n)=$
+                            \begin{itemize}
+                             \item +$\infty$ se $a>1$
+                             \item -$\infty$ se $0<a<1$
+                            \end{itemize}
+                        \item $\lim_{n\to+\infty} log_a(\frac{1}{n})=$
+                            \begin{itemize}
+                             \item -$\infty$ se $a>1$
+                             \item +$\infty$ se $0<a<1$
+                            \end{itemize}
+                        \item Alcuni calcoli con infinito:
+                            \begin{itemize}
+                             \item $\frac{1}{+-\infty}=0$
+                             \item $\frac{1}{0^+}=+\infty$
+                             \item $\frac{1}{0^-}=-\infty$
+                            \end{itemize}
+                    \end{itemize}
+                \end{flushleft}
+                \subsection{Forme Indeterminate}
+                \begin{flushleft}
+                Sono forme che ancora non possiamo affrontare quindi per raggirarle dovremmo applicare le proprieta in base
+                in base al limite
+                 \begin{itemize}
+                  \item $+-\infty*0$
+                  \item $+\infty-\infty$
+                  \item $\frac{+-\infty}{+-\infty}$
+                  \item $1^{+\infty}$
+                  \item $(0^+)^0$
+                 \end{itemize}
+                \end{flushleft}
+        \end{flushleft}
+        \subsection{Teorema (Criterio del rapporto)}
+        \begin{flushleft}
+            ${a_n}_n$ successione positiva tale che:
+            \begin{equation}
+                \lim_{x\to+\infty} \frac{a_n+1}{a_n}=L
+            \end{equation}
+            \begin{itemize}
+                \item se $L>1$ allora $\lim_{n\to+\infty} a_n = +\infty$
+                \item se $L<1$ allora $\lim_{n\to+\infty} a_n = 0$
+                \item se $L=0$ allora il criterio e' inconcludente
+            \end{itemize}
+        \end{flushleft}
+        \end{flushleft}
+        \subsubsection{Esempio Teorema (criterio del rapporto)}
+        \begin{flushleft}
+            INSERIRE ESEMPIO
+        \end{flushleft}
+        \subsection{Confronti di infiniti}
+        \begin{flushleft}
+            \begin{equation}
+                \lim_{n\to+\infty} a_n=\lim_{n\to+\infty} b_n=+\infty
+            \end{equation}
+            $\lim \frac{a_n}{b_n} =$
+            \begin{itemize}
+            \item $+\infty \to$ $a_n$ e' un infinito di ordine superiore a $b_n$
+            \item $0 \to$ $a_n$ e' un infinito di ordine superiore a $a_n$
+            \item $l\in \mathbb{R} \to$ $a_n$ e' un infinito di ordine superiore a $b_n$
+            \end{itemize}
+        \end{flushleft}
+        \subsubsection{Infiniti in ordine}
+        \begin{flushleft}
+           Gli infiniti in ordine di "grandezza"
+           \begin{equation}
+               log_n(n), \quad n^b, \quad a^n, \quad n!, \quad n^n
+           \end{equation}
+        \end{flushleft}
+        \subsection{Il numero di Nepero e}
+        \begin{flushleft}
+            \textbf{Teorema}: La successione $\{(1+\frac{1}{n})^n\}_{n \geq 1}$ e' convergente
+            e il suo limite e' detto: numero di nepero e:
+            \begin{equation}
+                \lim_{n \to \infty}(1+\frac{1}{n})^n= e
+            \end{equation}
+            \textbf{Osservazione} Si dimostra che $e \notin \mathbb{Q}$ e il suo valore e'
+            \begin{equation}
+               e=2.7182812884...
+            \end{equation}
+            \textbf{Dimostrazione} Verifichiamo la convergenza dimostrando
+            \begin{enumerate}
+                \item la successione e' strettamente crescente
+                \item la successione e' superiormente limitata e dunque il limite eiste e vale
+                    \begin{equation}
+                        sup(\{(1+\frac{1}{n}^n):n\in \mathbb{N}^+\}) \in \mathbb{R}
+                    \end{equation}
+            \end{enumerate}
+            \begin{enumerate}
+                \item Stretta crescenza: $\forall n \geq 1 \quad (1+ \frac{1}{n+1})^{n+1} > (1+\frac{1}{n})^n$
+                    \begin{equation}
+                        \begin{aligned}
+                            (1+ \frac{1}{n+1})^{n+1}=  & \sum_{k=0}^n
+                        \begin{pmatrix}
+                            n+1 \\
+                            k
+                        \end{pmatrix} \frac{1}{(n+1)^k}+\frac{1}{(n+1)^{n+1}}\\
+                            > & \sum_{k=0}^{n}
+                            \begin{pmatrix}
+                                n \\
+                                k
+                            \end{pmatrix} \frac{1}{n^k}=(1+\frac{1}{n})^n
+                        \end{aligned}
+                    \end{equation}
+                \item Limitatezza superiore: $\forall n \geq 2$
+                    \begin{equation}
+                        \begin{aligned}
+                            & (1+\frac{1}{n})^n = \sum_{k=0}^{n}
+                            \begin{pmatrix}
+                                n \\
+                                k
+                            \end{pmatrix}\frac{1}{n^k}=1+1+\sum_{k=2}^{n}=\\
+                            & =2+\sum_{k=2}^{n}(\frac{1}{k-1}-\frac{1}{k})=2+(1-\frac{1}{2})+(\frac{1}{2}-\frac{1}{3})+....+(\frac{1}{n-1}-\frac{1}{n})\\
+                            & = 2+1-\frac{1}{n} < 3
+                       \end{aligned}
+                    \end{equation}
+                    Quindi la successione ha 3 come maggiorante e dunque e' limitata superiormente.
+            \end{enumerate}
+        \end{flushleft}
+        \subsubsection{Esempi}
+        \begin{flushleft}
+            \begin{itemize}
+                \item
+                    \begin{equation}
+                        \lim_{n \to \infty} (1+\frac{1}{n^2})^{n^2} = e
+                    \end{equation}
+                    perche' $n^2$ e' una sottosuccessione di $\{n\}_{n\geq 1}$
+                \item
+                    \begin{equation}
+                        \begin{aligned}
+                            &  \lim_{n \to \infty} (1-\frac{1}{n})^{n} = \frac{1}{e} \\
+                            &  (1-\frac{1}{n})^n=(\frac{n-1}{n})^n=(\frac{n}{n-1})^{-n}=((1+\frac{1}{n-1})^{n-1}*(1+\frac{1}{n-1}))^{-1}
+                        \end{aligned}
+                    \end{equation}
+                \item
+                    \begin{equation}
+                        \begin{aligned}
+                            \lim_{n \to \infty} (1+\frac{1}{n})^{n^2} = +\infty
+                            (1+\frac{1}{n})^{n^2}=((1+\frac{1}{n})^{n})^n \geq 2^n \to +\infty
+                        \end{aligned}
+                    \end{equation}
+                    definitivamente perche e $>$ 2
+            \end{itemize}
+        \end{flushleft}
+        \subsubsection{Limite di funzione}
+        \begin{flushleft}
+            $f:D \to R$, $D\subseteq \mathbb{R}$, $x_o \in \mathbb{R}\cup \{+\infty,-\infty\},l\in \mathbb{R}$ (retta estesa)
+        \end{flushleft}
+        L'intorno di centro $x_o$ e raggio $r$ e' definito come:$I(x_o,r)$
+        \begin{itemize}
+            \item $(x_o-r,x_o+r)$ se $x_o \in \mathbb{R}$
+            \item $(r,+\infty)$ se $x_o = +\infty$
+            \item $(-\infty,-r)$ se $x_o = -\infty$
+        \end{itemize}
+        Nel caso $x_o \in \mathbb{R}$ si pone:
+        \begin{itemize}
+            \item $I^+(x_o,r)=(x_o,x_o+r)$ intorno destro
+            \item $I^-(x_o,r)=(x_o-r,x_o)$ intorno sinistro
+        \end{itemize}
+        \subsection{Teorema "Ponte"}
+        \begin{flushleft}
+            Si chiama cosi perche fa da ponte alle proprieta dei limiti delle successioni e a quelli dei limiti della funzione.
+        \end{flushleft}
+        \subsubsection{Proprieta' dei limiti di funzione}
+        \begin{flushleft}
+            Grazie al teorema del ponte valgono le proprieta' analoghe viste per i limiti delle successioni.
+        \end{flushleft}
+        \subsubsection{Funzioni continue}
+        \begin{flushleft}
+            Sia $f: D\to R$ e sia $x_o \in D$\\
+            Se $x_o$ e' un punto di accumulazione di D e
+            \begin{equation}
+                \lim_{x \to x_o} f(x)=f(x_o)
+            \end{equation}
+            Allora si dice f e' continuita' in $x_o$.\\
+            F si dice continua in $A\subseteq D$ se f e' continua in ogni punto $x_o \in A$ \\
+            \textbf{Osservazione} Le funzioni elementari sono continue nel loro dominio. Per le proprieta dei limiti
+            se f e g sono continue allora $f+-g,f*g,f/g$ e $f \circ g$ sono continue nel loro dominio.
+        \end{flushleft}
+        \subsubsection{Limiti Notevoli}
+        \begin{flushleft}
+            Per il teorema del "ponte" valgono i seguenti limiti:
+            \begin{itemize}
+                \item \begin{equation}
+                        \lim_{x \to +\infty} \frac{log_a(x)}{x^b}=0
+                \end{equation} per $a>0, a \neq 1$ e $b>o$
+                \item \begin{equation}
+                        \lim_{x \to 0^+} x^b*log_a(x)=0
+                \end{equation} $b>o$
+                \item \begin{equation}
+                        \lim_{x \to +\infty} \frac{x^b}{a^x}=0
+                \end{equation} per $a>0$ e $b>o$
+                \item \begin{equation}
+                        \lim_{x \to 0} \frac{log_a(1+x)}{x}=1
+                \end{equation}
+                \item \begin{equation}
+                        \lim_{x \to 0} \frac{e^x-1}{x}=1
+                \end{equation}
+                \item \begin{equation}
+                        \lim_{x \to 0} (1+\frac{a}{x})^x=e^a
+                \end{equation} $a\in \mathbb{R}$
+                \item \begin{equation}
+                        \lim_{x \to 0} \frac{(1+x)^a-1}{x}=a
+                \end{equation} per $a\in \mathbb{R}$
+                \item \begin{equation}
+                        \lim_{x \to 0} \frac{sin(x)}{x}=1
+                \end{equation}
+            \end{itemize}
+        \end{flushleft}
+        \subsection{Confronti tra infinitesimi}
+        \begin{flushleft}
+            Se:
+            \begin{equation}
+                \lim_{x \to x_0} \frac{f(x)}{g(x)} =
+                \label{eq:}
+            \end{equation}
+            \begin{enumerate}
+                \item  nel caso di 0 diciamo che $x\to x_O$, f(x) e' un
+                        infinitesimo di ordine superiore a g(x)
+                \item nel caso di $l \neq 0$ diciamo che per $x \to x_0$, f(x) e' un
+                        infinitesimo dello stesso ordine di g(x)
+                \item nel caso di +- $\infty$ diciamo che per $x \to x_0$, f(x) e' un infinitesimo
+                    di ordine inferiore a g(x)
+            \end{enumerate}
+            Se $\alpha$, per $x\to x_0$, $(x-x_0)^\alpha$ e' un infinitesimo di ordine $\alpha$
+        \end{flushleft}
+        \subsection{Proprieta delle funzioni continue (1 parte)}
+        \begin{flushleft}
+            \subsubsection{Teorema degli zeri}
+            \begin{flushleft}
+                Se f e' una funzione continua in [a,b] e $f(a)*f(b)<0$ allora $\exists x_0 \in (a,b):f(x_0)=0$\\
+                Dimostrazione: Caso $f(a)<0$ e $f(b)>0$. Costruiamo ricorsivamente due sucssioni $\{a_n\}_n$ $\{a_n\}_n$
+                nel seguente modo: $a_0=a,b_0=b$ e dati $a_0,a_1,....,a_n$ e analogamente per b sia
+                \begin{equation}
+                    c_n=\frac{a_n+b_n}{2}
+                \end{equation}
+                Punto medi di $a_n,b_n$ Abbiamo 3 casi possibili:
+                \begin{enumerate}
+                    \item se $f(c_n)=0$ allora $x_0=c_n$ e abbiamo finito
+                    \item se $f(c_n)<0$ allora poniamo $a_{n+1}=c_n$ e $b_{n+1}=b_n$
+                    \item se $f(c_n)<0$ allora poniamo $a_{n+1}=a_n$ e $b_{n+1}=c_n$
+                \end{enumerate}
+                Se il punto 1 non si verifica mai allora sono tali che:
+                \begin{equation}
+                    \forall n \in \mathbb{N} \quad a_n\leq a_{n+1}<b
+                \end{equation}
+                $\{a_n\}$ e' crescente ed e' limitata superiormente
+                \begin{equation}
+                    \forall n \in \mathbb{N} \quad a\leq b_{n+1}<b_n
+                \end{equation}
+                $\{b_n\}$ e' decrescente ed e' limitata inferiormente e quindi convergono entrambe.
+                \begin{equation}
+                    \lim_{n\to \infty} a_n=sup{a_n,n\geq 0}=A
+                \end{equation}
+                \begin{equation}
+                    \lim_{n\to \infty} b_n=inf{b_n,n\geq 0}=B
+                \end{equation}
+                con $a\leq A \leq B \leq b$. Inoltre al passo n-esimo l'intervallo [a,b] e'
+                stato diviso a meta' n volte e quindi:
+                \begin{equation}
+                    B-A \leftarrow b_n-a_n=\frac{b-a}{2^n} \to 0 \to B=A
+                \end{equation}
+                Chiamiamo questo valore comune $x_0$ e verifichiamo che $f(x_0)=0$\\
+                Dato che f e' continua in $x_0 \in [a,b]$,
+                \begin{equation}
+                    a_n \to x_0 \to f(a_n) \to f(x_0) \leq 0
+                \end{equation}
+                \begin{equation}
+                    b_n \to x_0 \to f(b_n) \to f(x_0) \geq 0
+                \end{equation}
+                cosi $0\leq f(x_0)\leq 0$ ossia $f(x_0)=0$.
+            \end{flushleft}
+            \subsubsection{Teorema dei valori intermedi}
+            \begin{flushleft}
+                Se f e' una funzione continua in [a,b] e $y_0$ e' un valore compreso
+                strattemente tra f(a) e f(b) allora $\exists x_0 \in (a,b)$ tale che $f(x_0)=y_0$\\
+                \textbf{Osservazione:} Se f e' una funzione continua in un intervallo I allora l'insieme
+                immagine $f(I)$ e' ancora un intervallo.
+            \end{flushleft}
+        \end{flushleft}
+        \section{Derivate}
+        \begin{flushleft}
+         Una funzione e' derivabile se $f: D \to E,x_0 \in D$ e se la formula del rapporto incrementale esiste:
+          \begin{equation}
+            \exists \lim_{h \to 0} \frac{f(x+h)-f(x_0)}{h} = f'(x_0)=\frac{df}{dx}(x_0) 
+          \end{equation}
+          "in caso inserire grafico" \\ 
+          secante=
+          \begin{equation}
+            y=(\frac{f(x_0+h)-f(x_0)}{h})(x-x_0)+f(x_0)
+          \end{equation}
+          al limite abbiamo una retta tangente = $y=f(x_0)(x-x_0)+f(x_0)$
+          \textbf{Osservazione:} se f e' derivabile in $x_0$ allora f e' anche continua in $x_0$
+          \begin{equation}
+           \lim_{x \to x_0} f(x)=f(x_0) 
+          \end{equation}
+        \end{flushleft}
+        \subsection{Derivate delle funzioni elementari}
+        \begin{flushleft}
+          Ogni derivata della funzione elementare e' stat trovata applicando la formula del rapporto incrementale
+          \begin{itemize}
+            \item $f(x)=mx+q \to m$
+            \item $f(x)=x^b \to bx^{b-1}$
+            \item $f(x)=e^x \to e^x$
+            \item $f(x)=log(x) \to \frac{1}{x} = ln(x) \to \frac{1}{x}$
+            \item $f(x)=sen(x) \to cos(x)$
+            \item $f(x)=cos(x) \to -sen(x)$
+            \item $f(x)=arcsen(x) \to \frac{1}{\sqrt{1-x^2}}$
+            \item $f(x)=arccosen(x) \to -\frac{1}{\sqrt{1-x^2}}$
+            \item $f(x)=arctan(x) \to \frac{1}{1-x^2}$
+            \item $f(x)=tan(x) \to \frac{1}{cos^2(x)}=1+tg^2(x)$
+          \end{itemize}
+        \end{flushleft}
+        \subsection{Regole di derivazione}
+        \begin{flushleft}
+         \begin{enumerate}
+          \item Linearita': $\forall a,b \in \mathbb{R} \quad (af+bg)'(x)=af'(x)+bg'(x)$ 
+          \item Prodotto: $(f*g)'(x)=f(x)'g(x)+f(x)g'(x)$ 
+          \item Rapporto: $(\frac{f(x)}{g(x)})'=\frac{f(x)'g(x)-f(x)g'(x)}{g^2(x)}$ 
+          \item Composte: $(f\circ g)'(x)=f'(g(x))*g'(x)$ 
+         \end{enumerate}
+        \end{flushleft}
+        \subsection{Punti massimi e minimi}
+        \begin{flushleft}
+          $f: D \to R, A\subseteq D, x_0 \in A$
+          \begin{itemize}
+            \item $x_0$ e' un punto di massimo assoluto di f in A se:
+              \begin{equation}
+                \forall x \in A, f(x) \leq f(x_0) 
+              \end{equation}
+            \item $x_0$ e' un punto di massimo relativo di f in A se:
+              \begin{equation}
+                \exists r>0,\forall x \in A \cap I(x_0,r), f(x)\leq f(x_0)
+              \end{equation}
+            \item analogalmente per il punto minimo assoluto e relativo cambiando il segno delle espressione di sopra indicate
+          \end{itemize}
+          Questi puntini esistono perche A e' sotto insieme del dominio se noi cambiamo il dominio potrebbero cambiare anche i punti di massimo e 
+          di minimo
+        \end{flushleft}
+        \subsection{Teorema di Fermat}
+        \begin{flushleft}
+          $f(a,b) \to R$, $x_0$ e' un punto di massimo o minimo relativo in a e b \\ 
+          Allora se f e' derivabile in $x_0$ allora $f'(x_0)=0$ questo vuol dire che $x_0$ e' un punto stazionario \\
+          \textbf{Dimostraione}: $\exists r>0:(x_0-r,x_0+r) \leq (a,b)$ e $\forall x \quad I(x_0,r) \quad f(x) \leq f(x_0)$
+          \begin{equation}
+            \frac{f(x_0+h) - f(x_0)}{h}= 
+          \end{equation}
+          \begin{itemize}
+            \item $\frac{\leq 0}{+}\leq 0$ se $h>0 \Rightarrow f(x_0)=0$
+            \item $\frac{\leq 0}{-}\geq 0$ se $h<0 \Rightarrow f(x_0)=0$
+          \end{itemize}
+        \end{flushleft}
+        \subsection{Teorema (Bolzano-Weierstrass)}
+        \begin{flushleft}
+          Se $\{x_n\}_n$ e' una successione limitata allora esiste una sottosucessione $\{x_{n_{k}}\}_k$ convergente
+        \end{flushleft}
+        \subsection{Teorema Weierstrass}
+        \begin{flushleft}
+          Se f e' una funzione continua in [a,b] allora $\exists x_{min} \in [a,b],\exists x_{max} \in [a,b]$ 
+          \begin{equation}
+            \forall [a,b] \quad f(x_{min}) \leq f(x) \leq f(x_{max}) 
+          \end{equation}
+          Osservazione: $f([a,b])=\{f(x): x \in [a,b] \} = [f(x_{min},f(x_{max})]$
+        \end{flushleft}
+        \subsubsection{Dimostrazione esistenza di $x_{max}$}
+        \begin{flushleft}
+          $M=sup\{f(x):x \in [a,b] \} \in \mathbb{R} \cup \{-\infty,+\infty\}$
+          \begin{enumerate}
+            \item Se $M=+\infty,\forall n \in \mathbb{N}^+,\exists x_n \in [a,b],f(x_n)>n$
+            \item Se $M= \mathbb{R},\forall n \in \mathbb{N}^+,\exists x_n \in [a,b]: M-\frac{1}{n} \leq f(x_n)\leq M$
+          \end{enumerate}
+          In entrambi i casi e' vera:
+          \begin{equation}
+            \lim_{n\to \infty} f(x_n)=M \quad (f(x_{max})=M) 
+          \end{equation}
+          La successione $\{x_n\}_n \subseteq [a,b]$ e' quindi limitata e per (Bolzano-Weierstrass) $\exists \{x_{n_{k}}\}$ che converge,
+          \begin{equation}
+            \exists \lim_{k \to \infty} x_{n_{k}}=x_{n_{0k}} ???
+          \end{equation}
+          ora rimane da vedere se e' vero $f(x_{max})=M$ dat che f e' continua in $x_{max}$ 
+          \begin{equation}
+            \lim_{k \to \infty} f(x_{n_{k}}=f(x_{max})
+          \end{equation}
+          Ora dobbiamo vedere se questo limite e' =M e grazie alla proprieta' dei limiti possiamo dire che se la successione tende ad un valore anche la
+          sottosuccessione tendera a  quello stesso valore.
+        \end{flushleft}
+        \subsection{Teorema di Lagrange o Teorema del valor medio}
+        \begin{flushleft}
+          $f:[a,b]\to R$, continua nell'intervallo chiuso e derivabile nell intervallo aperto (a,b) \\ 
+          Allora $\exists c \in (a,b)$ tali che: (questa formula puo essere interpretata come media)
+          \begin{equation}
+            \frac{f(b)-f(a)}{b-a}=f(c)
+          \end{equation}
+        \textbf{Dimostrazione:} 
+          \begin{equation}
+            f(x)=f(x)-\frac{f(b)-f(a)}{b-a}*(x*a)+f(a) 
+          \end{equation}
+          Per il teorema di Weierstrass $\exists x_{min},x_{max} \in [a,b]$ punti di minimi e massimo assoluti di I in [a,b]
+          \begin{enumerate}
+            \item entrambi stiano agli estremi = $x_{min}$ e $x_{max}$ stanno agli estremi a e b ($\{a,b\}$)
+              $\Rightarrow h(x_{min})=h(x_{max})=0 \Rightarrow \forall x \in [a,b], h(x)=0$ 
+            \item almeno uno tra $x_{min}$ e $x_{max}$ sta in (a,b). Per il teorema di Fermat $h'(x_{max})=0$ oppure $h'(x_{min})=0$
+          \end{enumerate}
+          Allora sia in 1) che in 2):
+          \begin{equation}
+            \exists c \in (a,b): h'(c)=0
+          \end{equation}
+        \end{flushleft}
+        \subsection{Teorema crieterio di monotonia}
+        \begin{flushleft}
+          Sia f derivabile in un Intervallo I allora:
+          \begin{enumerate}
+            \item $f'(c) \geq \forall x \in I \iff$ f e' crescente in I
+            \item $f'(c) \leq \forall x \in I \iff$ f e' decrescente in I
+          \end{enumerate}
+          \textbf{Osservazione:} $f'(x)=0\quad \forall x \in I \iff $ f e' costante \\
+          \textbf{Dimostrazione:}
+          \begin{itemize}
+            \item ($\Leftarrow$) sia $x\in I$
+              \begin{equation}
+                \frac{f(x+h)-f(x)}{h}= \frac{\geq 0}{+}\geq 0, h>0 \land \frac{\leq 0}{-}\geq 0, h<0 
+              \end{equation}
+           \begin{equation}
+             \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}= f'(x) \geq 0
+           \end{equation}
+         \item ($\Rightarrow$) Sappiamo che $\forall x \in I$, $f'(x) \geq 0$ devo dimostrare che :
+           \begin{equation}
+            \forall x_1,x_2 \in I, x_1<x_2 \Rightarrow f(x_1) < f(x_2) 
+           \end{equation}
+           \begin{equation}
+             \frac{f(x_2)-f(x_1)}{x_2-x_1} = f'(c)\geq 0
+           \end{equation}
+              $\exists c \in (a,b) \subseteq I$
+          \end{itemize}
+        \end{flushleft}
+        \section{Asintoti}
+        \subsection{Asintoti verticali}
+        \begin{flushleft}
+          $x=x_0$ e' un asintoto verticale di f se
+          \begin{equation}
+            \lim_{ x \to x_0^+} f(x)= +- \infty \quad \lor \quad \lim_{ x \to x_0^-} f(x)= +- \infty 
+          \end{equation}
+        \end{flushleft}
+        \subsection{Asintoti orizzontali e obliqui}
+        \begin{flushleft}
+          y=mx+q e' un asintoto di f se
+          \begin{equation}
+            \lim_{x \to +-\infty} (f(x)-(mx+q))=0
+          \end{equation}
+          $m=0 \to $ asintoto orizzontale,
+          $m\neq  0 \to $ asintoto orizzontale
+        \end{flushleft}
+        \begin{flushleft}
+          \textbf{Osservazione:} Se
+          \begin{equation}
+            \lim_{x \to +-\infty} \frac{f(x)}{x} =m \in \mathbb{R} \quad \land \quad \lim_{x \to +-\infty} (f(x)-mx)=q \in \mathbb{R}
+          \end{equation}
+        \end{flushleft}
+        \begin{flushleft}
+          \textbf{Osservazione:} A,B polinomi
+          \begin{equation}
+            f(x)=\frac{A(x)}{B(x)}
+          \end{equation}
+          \begin{itemize}
+            \item asintoto obliquo $\to$ grado(A)-grado(b)=1 
+            \item asintoto orizzontale $\to$ grado(A)=grado(B)
+          \end{itemize}
+        \end{flushleft}
+        \subsection{Concavita' e convessita'}
+        \begin{flushleft}
+          Sia $f:D \to \mathbb{R}$, I intervallo $\subseteq D$
+        \end{flushleft}
+        \begin{flushleft}
+          f si dice (strettamente) convessa dove nell'intervallo I: $\forall x_1,x_2 \in I \quad \forall t\in(0,1)$
+          \begin{equation}
+            f(tx_1+(1-t)x_2) \leq f(x_1)+(1-t)f(x_2)
+          \end{equation}
+        \end{flushleft}
+        \begin{flushleft}
+          f si dice (strettamente) concava dove nell'intervallo I: $\forall x_1,x_2 \in I \quad \forall t\in(0,1)$
+          \begin{equation}
+            f(tx_1+(1-t)x_2) \geq f(x_1)+(1-t)f(x_2)
+          \end{equation}
+          Oppure se -f e' una funzione convessa
+        \end{flushleft}
+        \begin{flushleft}
+          \textbf{Osservazione:} Ogni funzione retta f(x)=mx+q e' sia concava che convessa
+        \end{flushleft}
+        \subsubsection{Teorema criterio di convessita'/concavita'}
+        \begin{flushleft}
+          se f e' derivabile in I intervallo allora 
+          \begin{enumerate}
+            \item f e' convessa in I $\iff$ f e' crescente in I $\iff$ $f"(x) \geq 0 \quad \forall x \in I$
+            \item f e' concava in I $\iff$ f e' decrescente in I $\iff$ $f"(x) \leq 0 \quad \forall x \in I$
+          \end{enumerate}
+        \end{flushleft}
+        \subsection{Punti di flessso}
+        \begin{flushleft}
+          Sia f continua in $I(x_0)$ e derivabile in $x_0$, $x_0$ si dice punto di flesso:
+          \begin{enumerate}
+            \item se f e' strettamente convessa in $(x_0-r,x_0)$ e f e' strettamente concava in $(x_0,x_0+r)$
+            \item se f e' strettamente concava in $(x_0-r,x_0)$ e f e' strettamente convessa in $(x_0,x_0+r)$
+          \end{enumerate}
+        \end{flushleft}
+        \subsection{Punti di discontinuita'}
+        \begin{flushleft}
+          $f:D \to \mathbb{R}, x_0 \in D$
+        \end{flushleft}
+        \begin{enumerate}
+          \item Punto di discontinuita' eliminabile. Def:
+            \begin{equation}
+              \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x)= L \in \mathbb{R}, f(x_0) \neq L
+            \end{equation}
+          \item Punto di discontinuita' di salto. Def:
+            \begin{equation}
+              \lim_{x \to x_0^+} f(x) = L^+ \in \mathbb{R},\lim_{x \to x_0^-} f(x) = L^- \in \mathbb{R},L^+ \neq L^-
+            \end{equation}
+        \end{enumerate}
+        \subsection{Punti di non derivabilita'}
+        \begin{flushleft}
+          Sia f continua in $x_0$
+        \end{flushleft}
+        \begin{equation}
+          \lim_{x \to x_0^+} f'(x)=L^+ \in \mathbb{R} \cup {-\infty,+\infty}
+        \end{equation}
+        \begin{equation}
+          \lim_{x \to x_0^-} f'(x)=L^- \in \mathbb{R} \cup {-\infty,+\infty}
+        \end{equation}
+        \subsubsection{Punti angolosi,cuspidi e flesso tangente verticale}
+        \begin{enumerate}
+          \item \textbf{Punto angoloso:}
+            \begin{flushleft}
+              $L^+ \neq L^-$ e almeno uno deve essere finito
+            \end{flushleft}
+          \item \textbf{Punto di cuspide:}
+            \begin{flushleft}
+              $L^+=+\infty,\quad L^-=-\infty$
+            \end{flushleft}
+          \item \textbf{Punto di flesso tangente verticale:}
+            \begin{flushleft}
+              $L^+=L^-=+\infty,\quad L^-=L^+=-\infty$
+            \end{flushleft}
+        \end{enumerate}
+        \subsection{Studio di una funzione/grafico}
+        \begin{enumerate}
+          \item Dominio D
+          \item Continuita', simmetrie, segno
+          \item Limite degli estremi di D e asintoti
+          \item Derivata prima, crescenza/decresecenza, massimi e minimi assoluto e relativi
+          \item Derivata seconda, convessita' e concavita', punti di flesso
+        \end{enumerate}
+        \subsection{Teorema di Cauchy}
+        \begin{flushleft}
+          Siano f e g continue in un certo intervallo [a,b] e derivabile in (a,b)
+        \end{flushleft}
+        \begin{flushleft}
+          Se $g'(x) \neq 0$ in (a,b) allora $\exists c \in (a,b)$
+        \end{flushleft}
+        \begin{equation}
+          \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}
+        \end{equation}
+        \subsection{Teorema Hopital-Bernoulli}
+        \begin{flushleft}
+          f,g funzioni derivabili in $(x_0,x_0+r)$ con $r>0$
+        \end{flushleft}
+        \begin{enumerate}
+          \item 
+            \begin{equation}
+              \lim_{x \to x_0^+} f(x)=\lim_{x \to x_0^+} g(x)=0
+          \end{equation}
+        \item 
+          \begin{equation}
+            \forall x \in (x_0,x_0+r), g'(x) \neq 0
+          \end{equation}
+        \item 
+          \begin{equation}
+            \exists \lim_{x \to x_0}=L \in \mathbb{R} \cup \{ +\infty, -\infty \}
+          \end{equation}
+          Allora 
+            \begin{equation}
+              \exists \lim_{x \to x_0^+} \frac{f(x)}{g(x)}=L
+            \end{equation}
+        \end{enumerate}
+        \begin{flushleft}
+          Dimostrazione: Estendo f e g in $x_0$ ponendo $f(x_0)=g(x)=0$. Quindi che le f e g estese sono continue in $[x_0,x_0+r]$.
+          Considero una successione una successione $\{ x_n \} \subseteq (x_0,x_0+r$ tale che $x_n \to x_0^+$.
+        \end{flushleft}
+        \begin{flushleft}
+          Applico teorema di cauchy in $[x_0,x_n], \exists c_n \in (x_0,x_n)$
+        \end{flushleft}
+        \begin{equation}
+          \frac{f(x_n)}{g(x_n)}=\frac{f(x_n)-f(x_n)}{g(x_n)-g(x_n)}=\frac{f'(c_n)}{g'(c_n)} \to L \square
+        \end{equation}
+        \subsection{Polinomio Taylor}
+        \begin{flushleft}
+          f derivabile n-volte in un certo punto $x_0$ allora il polinomio di Taylor di f centrato in $x_0$ di ordine n e'
+        \end{flushleft}
+        \begin{equation}
+          T_{n,x_0}(x)= \sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}+o((x-x_0)^n)
+        \end{equation}
+        \subsubsection{Formula di Taylor con resto di Peano}
+        \begin{flushleft}
+          Se f e' derivabile n-volte in $I(x_0,r)$ con $r>0$ allora:
+        \end{flushleft}
+        \begin{equation}
+          \forall x \in I(x_0,r) \quad f(x)=T_{n,x_0}+o((x-x_0)^n)
+        \end{equation}
+        \begin{flushleft}
+          Dimostrazione:
+        \end{flushleft}
+        \subsubsection{Principali sviluppi di Taylor per $x \to 0$}
+        \begin{itemize}
+          \item $e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...+\frac{x^n}{n!}+o(x^n)$
+          \item $log(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+...+(-1)^{n-1}*\frac{x^n}{n}+o(x^n)$
+          \item $sen(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+...+(-1)^n*\frac{x^{2n+1}}{(2n+1)!}+o(x^{2n+2})$
+          \item $cos(x)=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+...+(-1)^n*\frac{x^{2n}}{(2n)!}+o(x^{2n+1})$
+          \item $(1+x)^b=1+bx+\frac{b(b-1)}{2!}x^2+...+\frac{b(b-1)...(b-n+1)}{n!}x^n+o(x^n)$
+          \item $arctan(x)=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+...+(-1)^n*\frac{x^{2n+1}}{(2n+1)}+o(x^{2n+2})$
+        \end{itemize}
+        \subsubsection{Regole per l'o-piccolo}
+        \begin{enumerate}
+          \item $\forall c \neq 0,\quad  c*o(x^n)=o(c*x^n)=o(x^n)$
+          \item $b>a \quad c*o(x^b)-o(x^a)=o(x^a)$
+          \item $b>a \quad o(x^b)-o(x^a)=o(x^a)$
+          \item $o(x^a)*o(x^b)=o(x^{a+b})$
+          \item $x^a*o(x^b)=o(x^{a+b})$
+          \item ...
+        \end{enumerate}
+        \section{Calcolo integrale}
+        \begin{flushleft}
+          
+        \end{flushleft}
+        \subsection{Teorema}
+        \begin{flushleft}
+          Se f e' continua in [a,b] allora f e' integrabile in [a,b]
+        \end{flushleft}
+        \begin{flushleft}
+          \textbf{Osservazioni}:
+          \begin{enumerate}
+            \item Se f e'integrabile in [a,b] allora anche la funzione che ottengo da f modificandola in un numero finito di punti
+              e' integrabile e ha lo stesso integrale. Questo vuol dire posso inserire finiti segmenti e punti ma l area rimarra sempre la stessa
+            \item 
+              \begin{equation}
+                \int_a^b f(x)dx = -\int_b^a f(x)dx \quad \quad  \int_a^a f(x)dx=0
+              \end{equation}
+            \item Se f e' integrabile in [a,b] e $c \in $[a,b]
+              \begin{equation}
+                \int_a^b f(x)dx = \int_a^c f(x)dx +\int_c^b f(x)dx 
+              \end{equation}
+            \item Linearita'
+              \begin{equation}
+                \int_a^b (\alpha f(x)+ \beta f(x))dx=\alpha \int_a^b f(x)+ \beta \int_a^b f(x))dx
+              \end{equation}
+              \begin{equation}
+                \int_a^b (f(x)g(x))dx \neq \int_a^b f(x)dx * \int_a^b g(x)dx 
+              \end{equation}
+            \item Monotonia
+              Se $f(x) \leq g(x)$ in [a,b]
+              \begin{equation}
+                \int_a^b f(x) \leq \int_a^b g(x)
+              \end{equation}
+              Inoltre
+              \begin{equation}
+                -\mid f(x) \mid \leq f(x) \leq \mid f(x) \mid
+              \end{equation}
+              Questo implica anche:
+              \begin{equation}
+                -\int_a^b \mid f(x) \mid \leq \int_a^b f(x) \leq \int_a^b \mid f(x) \mid 
+              \end{equation}
+              Pero non vale l uguaglianza di:
+              \begin{equation}
+                \mid \int_a^b f(x)dx \mid \leq \int_a^b f(x)dx
+              \end{equation}
+            \item Se f e' continua 
+              \begin{equation}
+                \int_a^b f(x)dx = \lim_{n \to +\infty} \frac{1}{n} \sum_{k=1}^n f(a+ \frac{k}{n}(b-a))
+              \end{equation}
+          \end{enumerate}
+        \end{flushleft}
+        \subsection{Tecniche di Integrazione}
+          \begin{enumerate}
+            \item Integrazione per sostituzione
+              \begin{flushleft}
+                Se F=f allora
+              \end{flushleft}
+              \begin{equation}
+                \begin{split}
+                  \int f(g(x))g'(x)dx= & \int f(t) dt=F(t)+c=F(g(x))+c \\ 
+                  & t=g(x) \\ 
+                  & dt=g'(x)dx
+                \end{split}
+              \end{equation}
+            \item Integrazione per parti
+                \begin{equation}
+                  \int f(x)g'(x)dx=f(x)g(x)-\int g(x)*f'(x)dx
+                \end{equation}
+          \end{enumerate}
+          \subsection{Integrazioni Razionali $\frac{P}{Q}$}
+          \begin{enumerate}
+            \item Se deg(P) $\geq$ deg(Q) fare la divisione
+              \begin{equation}
+                \frac{P}{Q}=S+\frac{R}{Q}
+              \end{equation}
+              Dove S e' il quoziente e R e' il resto della divisione
+            \item Fattorizzare Q
+              \begin{equation}
+                Q=\Pi_{k=1}^n(x-a_k)*\Pi_{k=1}^m(x^2+b_k+c_k)
+              \end{equation}
+            \item Scrivere $\frac{P}{Q}$ come combinazioni lineare di fratti semplici
+              \begin{itemize}
+                \item 
+                  \begin{equation*}
+                    \frac{1}{(x-a_k)^j} \quad j=1,...,n_k
+                  \end{equation*}
+                \item 
+                  \begin{equation*}
+                    \frac{1}{(x^2+b_kx+c_k)^j}+\frac{1}{(x^2+b_kx+c_k)^j} \quad j=1,...,n_k
+                  \end{equation*}
+              \end{itemize}
+              \begin{flushleft}
+                ESEMPIO:
+              \end{flushleft}
+              \begin{equation*}
+                \frac{R(x)}{(x+1)^3(x+2)(x^2+1)^2}=\frac{C_1}{x+1}+\frac{C_1}{(x+1)^2}+\frac{C_3}{(x+1)^3}+\frac{C_4}{x+2}+\frac{C_5x+C_6}{x^2+1}+\frac{C_7x+C_8}{(x^2+1)^2}
+              \end{equation*}
+            \item Usa la linearita' e integra i tratti semplici
+              \begin{flushleft}
+                Integrali dei tratti semplici
+              \end{flushleft}
+              \begin{itemize}
+                \item j=1 
+                  \begin{equation*}
+                    \frac{1}{x-a} \to^{\int} lg \mid x-a \mid +c
+                  \end{equation*}
+                \item j$\geq$1 
+                  \begin{equation*}
+                    \frac{1}{(x-a)^j} \to^{\int} \frac{(x-a)^{-j+1}}{-j+1}
+                  \end{equation*}
+                \item continuare con gli appunti di del prof
+              \end{itemize}
+          \end{enumerate}
+          \subsection{Integrali impropri}
+          \begin{flushleft}
+            $f:[a,b) \lor (a,b] \to \mathbb{R}$
+          \end{flushleft}
+          \begin{equation*}
+            \lim_{t \to b} \int_a^t f(x)dx=\int^b_a f(x)dx=
+          \end{equation*}
+          \begin{itemize}
+            \item $=L\in \mathbb{R} \to $ l'integrale e' convergente
+            \item $=+\infty,-\infty \to $ l'integrale e' divergente 
+            \item $=\nexists\to $ l'integrale e' indeterminato
+          \end{itemize}
+          \begin{flushleft}
+            $f:(a,b) \to \mathbb{R}$
+          \end{flushleft}
+          \begin{equation*}
+            \int_a^b f(x)dx=\int^c_a f(x)dx + \int^b_c f(x)dx
+          \end{equation*}
+          \begin{flushleft}
+            convergente $\iff$ convergente $\land$ convergente 
+            divergente $\iff$ divergente $\land$ divergente
+          \end{flushleft}
+          \begin{flushleft}
+            Osservazione: se $f\geq 0$ in [a,b) allora la funzione
+          \end{flushleft}
+          \begin{equation*}
+            F(t)=\int^t_a f(x)dx \quad \text{e' crescente in [a,b)}
+          \end{equation*}
+          \begin{flushleft}
+            se $t_1<t_2$
+          \end{flushleft}
+          \begin{equation*}
+            F(t_1)-F(t_2)=\int^{t_2}_{t_1}dx \geq 0
+          \end{equation*}
+          \begin{equation*}
+            \int^b_a f(x)dx=\lim_{t \to b^-} F(t)= \text{esiste $\in \mathbb{R} \cup \{+\infty\}$}
+          \end{equation*}
+          \subsubsection{Teorema del confronto per integrali impropri}
+          \begin{flushleft}
+            Siano f,g definite in [a,b) e $0\leq f(x)\leq g(x) \quad \forall x\in [a,b)$ allora
+          \end{flushleft}
+          \begin{enumerate}
+            \item Se $\int^b_a g(x)dx$ e' convergente $\to \int^b_a f(x)$ e' convergente
+            \item Se $\int^b_a f(x)dx$ e' divergente $\to \int^b_a f(x)$ e' divergeente
+          \end{enumerate}
+          \begin{flushleft}
+            Dimostrazione: Consideriamo
+          \end{flushleft}
+          \begin{equation*}
+            F(t)=\int^t_a f(x)dx,G(t)=\int^t_a g(x)dx
+          \end{equation*}
+          \begin{equation*}
+            G(t)-F(t)=\int^t_a g(x)-f(x)dx \geq 0
+          \end{equation*}
+          \begin{equation*}
+            \int^b_a f(x)dx=\lim_{t \to b^-}F(t) \leq \lim_{t \to b^-}G(t) = \int^b_a g(x)dx
+          \end{equation*}
+          \subsubsection{Integrali "Notevoli"}
+          \begin{equation*}
+            \int^{+\infty}_2 \frac{1}{x^{\alpha}(lg(x))^{\beta}}dx=
+          \end{equation*}
+          \begin{itemize}
+            \item converge se $\alpha>1$ oppure $\alpha=1$ e $\beta>1$
+            \item diverge altrimenti
+          \end{itemize}
+          \begin{equation*}
+            \int^{\frac{1}{2}}_0 \frac{1}{x^{\alpha}(lg(x))^{\beta}}dx=
+          \end{equation*}
+          \begin{itemize}
+            \item converge se $\alpha<1$ oppure $\alpha=0$ e $\beta>1$
+            \item diverge altrimenti
+          \end{itemize}
+          \subsubsection{Teorema del confronto asintotico}
+          \begin{flushleft}
+            Siano f,g in [a,b) e $f\geq 0,g>0$ in [a,b) se
+          \end{flushleft}
+          \begin{equation*}
+            \lim_{x\to b^-}\frac{f(x)}{g(x)}=(0,+\infty), \quad f(x) \sim L*g(x) \quad \text{"$\sim$" = equivalenza asintotica}
+          \end{equation*}
+          \begin{flushleft}
+            E.g
+          \end{flushleft}
+          \begin{equation*}
+            \int^{+\infty}_0 \frac{3x^2+1}{4x^3+x+1}dx \quad \text{e' convergente?}
+          \end{equation*}
+          \begin{equation*}
+            \frac{3x^2+1}{4x^3+x+1}=\lim_{x \to +\infty} 
+            \frac{x^2(3+\frac{1}{x^2})}{x^3(4+\frac{1}{x^2}+1)} \sim \frac{1}{x}*\frac{3}{4}
+          \end{equation*}
+          \begin{flushleft}
+            Quindi no e' divergente
+          \end{flushleft}
+          \section{Serie Numeriche}
+          \begin{equation*}
+            \sum_{k=k_0}^{\infty} A_k= \lim_{n \to \infty} A_k=
+          \end{equation*}
+          \begin{itemize}
+            \item $L\in \mathbb{R}$
+            \item $+\infty,-\infty$
+            \item $\not \exists$
+          \end{itemize}
+          \begin{flushleft}
+            La seconda parte della equazione iniziale dove c'e' il limite. Quella somma li si chiama somma parziale. Praticamente
+            e come se facessimo:
+          \end{flushleft}
+          \begin{equation*}
+            \int^{+\infty}_a f(x)dx=\lim_{t \to +\infty} \int^t_a f(x)dx
+          \end{equation*}
+          \begin{flushleft}
+           Adesso vediamo 3 esempi di serie numerica, 1 per ogni caso indicato sopra: convergente, divergente, indeterminata. 
+          \end{flushleft}
+          E.g
+          \begin{equation*}
+            0.1\bar=\sum^{\infty}_{k=1} \frac{1}{10^k}=\frac{1}{9} \quad \Rightarrow \text{converge}
+          \end{equation*}
+          \begin{equation*}
+            \sum^{\infty}_{k=1} 1 \quad \Rightarrow \text{diverge}
+          \end{equation*}
+          \begin{equation*}
+            \sum^{\infty}_{k=1} (-1)^k=-1+1-1+1-1.... \quad \Rightarrow \not \exists
+          \end{equation*}
+          \subsection{Serie geometrica}
+          \begin{equation*}
+            \sum^{\infty}_{k=1} x^k
+          \end{equation*}
+          \begin{itemize}
+            \item $+\infty$ se $x=1$
+            \item $?$ se $x\neq1$
+              \begin{itemize}
+                \item $0$ se $\mid x \mid <1$
+                \item $+\infty$ se $x>1$
+                \item $\not \exists$ se $x \leq 1$
+              \end{itemize}
+          \end{itemize}
+          \begin{flushleft}
+            Ora calcoliamo la serie geometrica per vedere che valori assume al variare di x
+          \end{flushleft}
+          \begin{equation*}
+            \sum^{\infty}_{k=1} x^k=\begin{cases}
+              \frac{1}{1-x} \quad  \text{se} \quad \mid x \mid <1
+              +\infty \quad  \text{se} \quad x >1
+              \not \exists \quad  \text{se} \quad x \leq -1
+            \end{cases}
+          \end{equation*}
+          \subsection{Teorema Condizione necessaria di convergenza}
+          \begin{equation*}
+            \text{Se} \quad  \sum^{\infty}_{k=0} \quad \text{e' convergente allora} \quad \lim_{k\to \infty} A_k=0
+          \end{equation*}
+          \begin{flushleft}
+            Dimostrazione
+          \end{flushleft}
+          \begin{equation*}
+            \lim_{n\to +\infty} S_n=L \in \mathbb{R}
+          \end{equation*}
+          \begin{equation*}
+            0=L-L \Leftarrow S_n-S_{n-1}=\sum^n_{k=0} a_n - \sum^n_{k=0} a_{n-1}=a_n
+          \end{equation*}
+          \subsection{Serie armonica}
+          \begin{equation*}
+            \sum^{\infty}_{k=1} \frac{1}{k} = \infty
+          \end{equation*}
+          \subsection{Teorema Criterio del confronto}
+          \begin{flushleft}
+            $\{ a_k \},\{b_k\}$, tali che $0 \leq a_k \leq b_k \quad \forall k \geq n$
+          \end{flushleft}
+          \begin{enumerate}
+            \item 
+              \begin{equation*}
+                \sum^{\infty}_{k=0} b_k= \quad \text{convergente} \quad \Rightarrow \sum^{\infty}_{k=0} a_k \quad \text{e' convergente}
+              \end{equation*}
+            \item 
+              \begin{equation*}
+                \sum^{\infty}_{k=0}a_k=+\infty \Rightarrow \sum^{\infty}_{k=0} b_k = +\infty
+              \end{equation*}
+          \end{enumerate}
+          \subsection{Teorema del confronto asintotico}
+          \begin{flushleft}
+            $\{ a_k \},\{b_k\}$, tali che $0 \leq a_k , b_k >0$ definitivamente
+          \end{flushleft}
+          \begin{equation*}
+            \lim_{k\to \infty} \frac{a_k}{b_k} = L \in (0,+\infty) \quad a_k \Tilde 2b_k
+          \end{equation*}
+          allora
+          \begin{equation*}
+            \sum^{\infty}_{k=0} a_k \quad \text{converge} \quad \iff \sum^{\infty}_{k=0} b_k \quad \text{converge}
+          \end{equation*}
+          \subsection{Teorema del confronto integrale}
+          \begin{flushleft}
+            Sia f una funzione decrescente e $\geq 0$ in $[1,+\infty)$ e sia $a_k=f(k)$. Allora
+          \end{flushleft}
+          \begin{equation*}
+            \sum^{\infty}_{k=1} a_k \quad \text{converge} \quad \iff \int^{+\infty}_1 f(x)dx \quad \text{converge}
+          \end{equation*}
+          \subsection{Teorema criterio della radice}
+          \begin{equation*}
+            \text{Se} \quad \lim_{k\to +\infty} \sqrt[k]{a_k}=L \in [0,+\infty]
+          \end{equation*}
+          allora:
+          \begin{itemize}
+            \item $L<1 \Rightarrow \sum^{\infty}_{k=0} a_k$ e' convergente 
+            \item $L<1 \Rightarrow \sum^{\infty}_{k=0} a_k=+\infty$
+          \end{itemize}
+          \subsection{Teorema criterio del rapporto}
+          \begin{equation*}
+            \text{Se} \quad \lim_{k\to +\infty} \frac{a_{k+1}}{a_k}=L \in [0,+\infty]
+          \end{equation*}
+          allora
+          \begin{itemize}
+            \item $L<1 \Rightarrow$ la serie e' convergente 
+            \item $L>1 \Rightarrow$ la serie  = $+\infty$
+          \end{itemize}
+          \begin{flushleft}
+            Se L=1 in entrambi i criteri, il risultato e' inconcludenti
+          \end{flushleft}
+          \begin{equation*} 
+            \text{Oss:} \quad \sum^{\infty}_{k=0} \mid a_k \mid \quad \text{converge allora anche} \sum^{\infty}_{k=0} a_k \quad \text{converge}
+          \end{equation*}
+          \subsection{Teorema criterio di Leibniz}
+          \begin{enumerate}
+            \item $a_k \geq a_{k+1} \quad \forall k>0$
+            \item $\lim_{k\to \infty} a_k=0$
+          \end{enumerate}
+          \begin{flushleft}
+           Se questi 2 criteri sono verificati allora 
+          \end{flushleft}
+          \begin{equation*}
+            \sum^{\infty}_{k=0} (-1)^ka_k \quad \text{e' convergente}
+          \end{equation*}
+          \begin{flushleft}
+            Dimostrazione inserire immagine
+          \end{flushleft}
+          
+      \end{document}
