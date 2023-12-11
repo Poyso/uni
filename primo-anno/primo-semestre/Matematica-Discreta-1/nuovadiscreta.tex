@@ -1783,6 +1783,92 @@
           d*\mid S \mid \leq d*\mid N_G(S) \mid \Rightarrow \exists \quad \text{accoppiamento di $V_1$ in $V_2$ $\square$}
         \end{equation*}
         \begin{flushleft}
-          Questo voro per 5.2.1
+          Questo vero per 5.2.1
         \end{flushleft}
+        \begin{flushleft}
+          Sia G=(V,E) un grafo, e sia $d\in \mathbb{P}$
+        \end{flushleft}
+        \begin{flushleft}
+          Def: G si dice regolare (di grado i) se d(x)=d per $\forall x\in V$
+        \end{flushleft}
+        \subsubsection{Proprieta'}
+        \begin{flushleft}
+          Sia G=(V,E) un grafo bipartito regolare, Allora $\Rightarrow \exists$ accoppiamento di $V_1$ in $V_2$ e $\exists$ accoppiamento di $V_2$ in $V_1$
+        \end{flushleft}
+        \begin{flushleft}
+          Dimostrazione: segue subito da 5.2.2 $\square$
+        \end{flushleft}
+        \subsection{Colorazioni}
+        \begin{flushleft}
+          Sia G=(V,E) un grafo, e sia $f:V\to [n] \quad (n \in \mathbb{P}$
+        \end{flushleft}
+        \begin{flushleft}
+          Def: f si dice una colorazione di G (in al piu n colori) Se:
+        \end{flushleft}
+        \begin{equation*}
+          x \neq y,\{x,y\}\in E\Rightarrow f(x)\neq f(y), \forall x,y \in V
+        \end{equation*}
+        \begin{flushleft}
+          In tal caso si dice che G e' colorabile (con al piu n colori)
+        \end{flushleft}
+        \begin{flushleft}
+          Def: il numero cromatico di G, scritto $\chi$(G), e' il piu piccolo $n\in \mathbb{P}$ per cui G puo' essere colorato con al piu' n colori
+        \end{flushleft}
+        E.g
+        \begin{flushleft}
+          Un esagono si puo' colorare con 2 colori $\Rightarrow \quad \chi(G)=2$
+        \end{flushleft}
+        \begin{flushleft}
+          Un pentagono si puo' colorare con 3 colori $\Rightarrow \quad \chi(G)=3$
+        \end{flushleft}
+        \begin{flushleft}
+          Oss: $\chi(K_n)=n,\chi(N_N)=1 \quad \forall n \in \mathbb{P}$
+        \end{flushleft}
+        \subsubsection{Proprieta'}
+        \begin{flushleft}
+          SIa G=(V,E) un grafo allora
+        \end{flushleft}`
+        \begin{equation*}
+          \chi(G) \leq max_{v \in V}\{d(v)\}+1
+        \end{equation*}
+        \begin{flushleft}
+          Questa e' una stima in quanti colori si possono colorare certi grafi
+        \end{flushleft}
+        \begin{flushleft}
+          Dimostrazione:Induzione su $\mid V \mid \geq 1$.
+        \end{flushleft}
+        \begin{flushleft}
+          Se $\mid V \mid =1 \Rightarrow \chi(G)=1 \leq 0+1=max\{d(v)\}+1$ OK
+        \end{flushleft}
+        \begin{flushleft}
+          Sia il risultato vero per tutti i grafi con $\leq n-1$ vertici
+        \end{flushleft}
+        \begin{flushleft}
+          Sia $\mid V \mid =n$.Sia $x\in V$.Sia $G'=(V/\{x\},E')$ dove $E'=\{l\in E: x \notin l\}$
+        \end{flushleft}
+        \begin{flushleft}
+          Allora per induzione
+        \end{flushleft}
+        \begin{equation*}
+          \chi(G)\leq max_{v\in V/\{x\}} \{d_G(v)\}+1\leq max_{v\in V/\{x\}} \{d_G(v)\}+1\leq max_\{v\in V\}\{d_G(v)\}+1
+        \end{equation*}
+        \begin{flushleft}
+          Sia $k=max_\{v\in V\}\{d_G(v)\}+1 \Rightarrow$ G' e' colorabile con al piu' k colori.
+        \end{flushleft}
+        \begin{flushleft}
+          $\{v_1,...,v_2\}=\{u \in V:\{u,x\}\in E\} \Rightarrow r=k-1 \Rightarrow r<k$
+        \end{flushleft}
+        \begin{flushleft}
+          Ma $v_1,...,v_r$ usano al piu' piccolo r colori $\Rightarrow$ posso assegnare ad x uno dei k-1 colori rimanenti. Quindi G e' colorabile in k colori $\Rightarrow \chi(G)\leq k \square$
+        \end{flushleft}
+        \subsection{grafi diretti}
+        \begin{flushleft}
+          Def:un grafo diretto (o disgrafo) e' una coppia D=(V,A) dove V e' un insieme (detto insieme dei vertici, o spigoli orientati, o lati diretti,o freccie)
+          Se $(u,v)\in A$ scriviamo $u \to v$.
+        \end{flushleft}
+        E.g:
+        \begin{flushleft}
+          Facebook e' un grafo, X (ex twitter) e' un grafo diretto
+        \end{flushleft}
+
       \end{document}
