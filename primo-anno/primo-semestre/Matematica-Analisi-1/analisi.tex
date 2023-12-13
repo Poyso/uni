@@ -1317,5 +1317,106 @@
           \begin{flushleft}
             Dimostrazione inserire immagine
           \end{flushleft}
-          
+          \section{Numeri complessi}
+          \begin{flushleft}
+            $\mathbb{C}=\{x+iy:x,y\in \mathbb{R}\} \supseteq R=\{x+i*0: x\in \mathbb{R} \}$
+          \end{flushleft}
+          \begin{flushleft}
+            z=x+iy \\
+            $\mid z \mid$=module di z= distanza dall origine al punto z = $\sqrt{x^2+y^2}$
+          \end{flushleft}
+          \begin{flushleft}
+            Re(z)=x parte reale di z \\
+            Im(z)=y la parte immaginaria di z
+          \end{flushleft}
+          \begin{flushleft}
+            $\bar{z}$=coniugato di z=x-iy=cambiare il segno della parte immaginaria
+          \end{flushleft}
+          \subsection{Operazioni su $\mathbb{C}$: somma e prodotto}
+          \begin{flushleft}
+            $z_1=x_1+iy_1,z_2=x_2+iy_2$ 
+          \end{flushleft}
+          \subsection*{Somma:}
+          \begin{itemize}
+            \item $z_1+z_2=(x_1+x_2)+i(y_1+y_2)$
+            \item il neutro, 0=0+0*i, l opposto di z
+          \end{itemize}
+          \subsection*{Prodotto:}
+          \begin{itemize}
+            \item $z_1*z_2=(x_1+iy_1)(x_1+iy_1)=x_1x_2+ix_1y_2+ix_2y_1+i^2y_1y_2=$ \\
+              $=(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1)$
+            \item elemento neutro=1=1+i*0
+            \item reciproco di z=x+iy $\neq$0
+          \end{itemize}
+          \begin{equation*}
+            \frac{1}{z}=\frac{1}{x+iy}*\frac{x-iy}{x-iy}=\frac{x-iy}{x^2+y^2}=\frac{x}{x^2+y^2}*\frac{iy}{x^2+iy^2}
+          \end{equation*}
+          \begin{equation*}
+            \frac{1}{z}=\frac{\bar{z}}{\mid z \mid ^2}
+          \end{equation*}
+          \begin{equation*}
+            z*\bar{z}=\mid z \mid ^2 \quad \text{Sviluppando i calcoli}
+          \end{equation*}
+          \subsection{Proprieta'}
+          \begin{enumerate}
+            \item $\bar{\bar{z}}=z,\bar{z+w}=\bar{z}+\bar{w},\bar{zw}=\bar{z}*\bar{w},\mid \bar{z}\mid = \mid z \mid$
+            \item Re(z)=$\frac{z+\bar{z}}{2}$, Im(z)=$\frac{z-\bar{z}}{2i}$
+            \item $\mid zw \mid=\mid z \mid * \mid w \mid$
+            \item $\mid z+w \mid \leq \mid z \mid + \mid w \mid$
+          \end{enumerate}
+          \subsection*{Indice ciclico della i}
+          \begin{equation*}
+            i^n=
+            \begin{cases}
+              1 \quad \text{se} \quad n \equiv 0 \quad mod(4)\\
+              i \quad \text{se} \quad n \equiv 1 \quad mod(4)\\
+              -1 \quad \text{se} \quad n \equiv 2 \quad mod(4)\\
+              -i \quad \text{se} \quad n \equiv 3 \quad mod(4)
+            \end{cases}
+          \end{equation*}
+          \begin{flushleft}
+            Oss: se $z\neq 0$ allora iz e' il numero che si ottiene ruotando z di 90 gradi in senso antiorario sul grafico dei numeri complessi
+          \end{flushleft}
+          \subsection*{Perche esistono i numeri complessi}
+          \begin{flushleft}
+            In $\mathbb{R}$ l'equazione
+          \end{flushleft}
+          \begin{equation*}
+            x^2=a \quad \text{a $\in \mathbb{R}$}
+          \end{equation*}
+          Se
+          \begin{enumerate}
+            \item Se $a>0$ ci sono 2 soluzioni
+            \item Se $a=0$ c'e' solo una soluzione $\to x=0$ (doppia soluzione)
+            \item Se $a<0$ non ci sono soluzioni
+          \end{enumerate}
+          \begin{flushleft}
+            In $\mathbb{C}$ l'equazione
+          \end{flushleft}
+          \begin{equation*}
+            x^2=a \quad \text{a $\in \mathbb{R}$}
+          \end{equation*}
+          \begin{flushleft}
+            Si risolve cosi, $z=x+iy$, $z^2=x^2+iyx+i^2y^2=(x^2-y^2)+i(2xy)=a$
+          \end{flushleft}
+          \begin{equation*}
+            (x^2-y^2)+i(2xy)=a+0 \to 
+            \begin{cases}
+              x^2-y^2=a  \\
+              2xy=0
+            \end{cases} \to 
+            \begin{cases}
+              y^2=-a \\
+              x=0
+            \end{cases} \cup 
+            \begin{cases}
+              x^2=a \\
+              y=0
+            \end{cases}
+          \end{equation*}
+          \begin{flushleft}
+            L'equazione iniziale possiamo vedere che ce uno 0 e la a questo perche la a va messa in sistema con la parte reale della equazione e lo 0
+            rappresenta la parte immaginaria dell equazione. Dopo averle messe in sistema risolvendoli vediamo che l ultimo sistema rappresenta
+            la soluzione se $a\geq 0$ e quello prima rappresenta la soluzione se $a\leq 0$ e in questa soluzione toccaa usare l ausilio del simbolo i dei numeri complessi
+          \end{flushleft}
       \end{document}

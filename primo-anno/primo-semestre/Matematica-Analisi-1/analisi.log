@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2023.10.7)  6 DEC 2023 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2023.12.10)  13 DEC 2023 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -162,14 +162,14 @@ Overfull \hbox (53.31204pt too wide) detected at line 1072
 [] \OT1/cmr/m/n/10 = [] + [] + [] + [] + [] + []
  []
 
-[21] [22] [23] [24] [25] [26] (./analisi.aux) ) 
+[21] [22] [23] [24] [25] [26] [27] (./analisi.aux) ) 
 Here is how much of TeX's memory you used:
  1722 strings out of 477986
- 24474 string characters out of 5840084
+ 24474 string characters out of 5840083
  1864385 words of memory out of 5000000
  21956 multiletter control sequences out of 15000+600000
  520186 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,15n,62p,238b,399s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on analisi.dvi (26 pages, 65512 bytes).
+Output written on analisi.dvi (27 pages, 69752 bytes).
