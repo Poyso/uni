@@ -1870,5 +1870,63 @@
         \begin{flushleft}
           Facebook e' un grafo, X (ex twitter) e' un grafo diretto
         \end{flushleft}
+        \begin{flushleft}
+          Sia D=(V,A) un grafo diretto
+        \end{flushleft}
+        \begin{flushleft}
+          Si rappresenta un grafo diretto graficamente collegando un punto x a un punto y con una freccia
+        \end{flushleft}
+        \begin{flushleft}
+          Inserire immagine del grafo
+        \end{flushleft}
+        \begin{flushleft}
+          $D=([6],\{ (1,2),(2,3),(3,6),(6,1),(2,1),(4,5),(5,3),(3,3)\}$
+        \end{flushleft}
+        \subsection*{Definizioni per il grafico diretto}
+        \begin{itemize}
+          \item Un cammino diretto in D e' una sequenza $(x_0...x_k)\in V^{k+1}$ tali che $x_i \to x_{i+1}$ $\forall i=0...k+1$. La lunghezza del cammino e' k che corrisponde con il numero di freccie
+          \item Un sentiero diretto in D e' un cammino diretto $(x_0...x_k)$ tale che $x_i\neq x_j$, per $\forall 0 \leq j, j\leq k$ con $i\neq j$
+          \item Un cammino diretto chiuso in D e' un cammino $(x_0...x_k)$ tali che $x_0 \to x_k$
+          \item Un ciclo diretto in D e' un cammino chiuso diretto $(x_0...x_k)$ tale che $(x_0...x_{k-1})$ e' un sentiero diretto
+        \end{itemize}
+        \begin{flushleft}
+          Siano $x,y \in V$
+        \end{flushleft}
+        \begin{itemize}
+          \item Y si dice raggiungibile da x se esiste un cammino diretto $(x_0....x_k)$ tale che $x_0=x$  e $x_k=y$
+            si dice anche che il cammino vada  da x a y altrimenti y si dice irraggiungibile
+          \item x e y sono comparabili se y e' raggiungibile da x oppure x e' raggiungibile da y, altrimenti e' incomparabile
+        \end{itemize}
+        \begin{flushleft}
+          Sia $S \subseteq V$
+        \end{flushleft}
+        \begin{itemize}
+          \item S si dice una catena se 
+            \begin{equation*}
+              x,y \in S, x\neq y \Rightarrow \quad \text{x e y sono comparabili}
+            \end{equation*}
+          \item S si dice una anticatena se 
+            \begin{equation*}
+              x,y \in S, x\neq y \Rightarrow \quad \text{x e y sono incomparabili}
+            \end{equation*}
+        \end{itemize}
+        \begin{flushleft}
+          Sia $x\in V$
+        \end{flushleft}
+        \begin{itemize}
+          \item Il grado interno di x e'
+            \begin{equation*}
+              d_-(x)=\mid \{ y\in V:y \to x\} \mid
+            \end{equation*}
+          \item Il grado esterno di x e'
+            \begin{equation*}
+              d_+(x)=\mid \{y\in V:x\to y\} \mid
+            \end{equation*}
+        \end{itemize}
+        \begin{flushleft}
+          Esempio sul quaderno
+        \end{flushleft}
+        
+
 
       \end{document}
