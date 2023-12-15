@@ -1926,6 +1926,50 @@
         \begin{flushleft}
           Esempio sul quaderno
         \end{flushleft}
+        \section{Reti di communicazione}
+        \subsection*{Definizioni}
+        \begin{itemize}
+          \item Una rete di communicazione e' una terna (R,I,O) dove R=(V,A) e' un grafo diretto
+            $I \subseteq V$,$O\subseteq V$, $I \cap O =\o$ e $\mid I \mid =\mid O \mid=N$.
+            Gli elementi di I si dicono nodi di input, gli elementi di O si dicono nodi di output
+        \end{itemize}
+        Sia (R,I,O) una rete di communicazioni
+        \begin{itemize}
+          \item Un problema di smistamento per la nostra rete di communicazione e' una permutazione $\pi \in S_N$. Sia $\pi \in S_N$
+          \item Uno smistamento per $\pi$ e' una sequenza $(P_1,...,P_N)$ dove $P_j$ e' un cammino diretoo che va da $i_j$ a $o_{\pi(j)}$, $\forall j=1...N$ \\ 
+            Dove $I=\{i_1,...,i_N\}$ e $O=\{o_1,...,o_N\}$
+        \end{itemize}
+        Sia $(P_1,...,P_n)$ un tale smistamento
+        \begin{itemize}
+          \item La latenza di $(P_1,...,P_N)$ e'
+            \begin{equation*}
+              max\{l(P_j):j=1,...,N\}
+            \end{equation*}
+          \item La congestione di $(P_1,...,P_N)$ e' 
+            \begin{equation*}
+              c(P_1,...,P_N)=max\{j\in N:x\in P_j\}
+            \end{equation*}
+        \end{itemize}
+        \begin{flushleft}
+          L insieme dei cammini che passano per un vertice e noi vogliamo il massimo
+        \end{flushleft}
+        Siano $x,y \in V$
+        \begin{itemize}
+          \item La distanza da x a y e' la lunghezza minima di un cammino drietto da x a y, scritto d(x,y). Se y non e raggiungibile da x allora scriveremo d(x,y)=$+\infty$
+          \item Il diametro di (R,I,O) e'
+            \begin{equation*}
+              max\{d(i_j,o_k): 1\leq j,k\leq N\} 
+            \end{equation*}
+          \item La congestione di (R,I,O) e'
+            \begin{equation*}
+              max_{\pi \in S_N}\{min_{(P_1,...,P_N)}\{c(P_1,...,P_N)\} \to \quad \text{ scritto c(R,I,O)}
+            \end{equation*}
+        \end{itemize}
+
+
+
+
+          
         
 
 
