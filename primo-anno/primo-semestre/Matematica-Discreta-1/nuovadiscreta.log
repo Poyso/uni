@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2023.12.10)  15 DEC 2023 16:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2023.12.19)  19 DEC 2023 12:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -102,46 +102,70 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip53
+\multirow@cntb=\count271
+\multirow@dima=\skip54
+\bigstrutjot=\dimen150
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-! LaTeX Error: File `multirow.sty' not found.
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 107.
 
-Enter file name: 
+(/usr/share/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2022/09/22 v3.1e Graphics/color driver for dvips
+))
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+)
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
 \l__pdf_internal_box=\box53
-\g__pdf_backend_object_int=\count271
+\g__pdf_backend_object_int=\count272
 \l__pdf_backend_content_box=\box54
 \l__pdf_backend_model_box=\box55
-\g__pdf_backend_annotation_int=\count272
-\g__pdf_backend_link_int=\count273
-\g__pdf_backend_link_sf_int=\count274
+\g__pdf_backend_annotation_int=\count273
+\g__pdf_backend_link_int=\count274
+\g__pdf_backend_link_sf_int=\count275
 )
 (./nuovadiscreta.aux)
 \openout1 = `nuovadiscreta.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
 
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -150,7 +174,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [2] [3] [4] [5] [6]
 [7] [8] [9] [10] [11] [12] [13] [14] [15]
-Overfull \hbox (46.6169pt too wide) detected at line 924
+Overfull \hbox (46.6169pt too wide) detected at line 926
 []\OT1/cmr/m/n/10 ([])[]((1 + \OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )[] \OMS/cmsy/m
 /n/10 j[]\OT1/cmr/m/n/10 = (\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 n\OT1/cmr/m/n/
 10 )(\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/1
@@ -161,7 +185,7 @@ Overfull \hbox (46.6169pt too wide) detected at line 924
  []
 
 [16] [17]
-Overfull \hbox (11.56107pt too wide) detected at line 1036
+Overfull \hbox (11.56107pt too wide) detected at line 1038
 []\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (1 \OM
 S/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 x\OT1/
 cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 )[] + \OML
@@ -174,37 +198,37 @@ T1/cmr/m/n/10 )[] = \OML/cmm/m/it/10 x []\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^
 
 [18] [19] [20] [21] [22] [23] [24]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-511.
+513.
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1511.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1513.
 
  [25]
 
-LaTeX Warning: Command \o invalid in math mode on input line 1517.
+LaTeX Warning: Command \o invalid in math mode on input line 1519.
 
 [26] [27]
 
-LaTeX Warning: Command \o invalid in math mode on input line 1625.
+LaTeX Warning: Command \o invalid in math mode on input line 1627.
 
 [28]
 
-LaTeX Warning: Command \o invalid in math mode on input line 1699.
+LaTeX Warning: Command \o invalid in math mode on input line 1701.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1699.
+LaTeX Warning: Command \o invalid in math mode on input line 1701.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1702.
+LaTeX Warning: Command \o invalid in math mode on input line 1704.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1702.
+LaTeX Warning: Command \o invalid in math mode on input line 1704.
 
 
-Overfull \hbox (24.1655pt too wide) detected at line 1703
+Overfull \hbox (24.1655pt too wide) detected at line 1705
 \OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = ((\OML/cmm/m/it/10 V[]=S\OT1/cmr/m/n/10 ) 
 \OMS/cmsy/m/n/10 [ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V[]=N[]\OT1/cmr/m/n/10 (\O
 ML/cmm/m/it/10 S\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 ; E[]\OT1/cmr/m/n/10 ) [] \O
@@ -216,16 +240,16 @@ m/it/10 l \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (\OML/cmm/m/it
  []
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1708.
+LaTeX Warning: Command \o invalid in math mode on input line 1710.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1708.
+LaTeX Warning: Command \o invalid in math mode on input line 1710.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1708.
+LaTeX Warning: Command \o invalid in math mode on input line 1710.
 
 
-Overfull \hbox (24.36856pt too wide) detected at line 1730
+Overfull \hbox (24.36856pt too wide) detected at line 1732
 \OT1/cmr/m/n/10 =\OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 S\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 [ \OML/cmm/m/it/10 N[]\OT1/cmr/m
 /n/10 (\OML/cmm/m/it/10 T\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 =\
@@ -241,13 +265,13 @@ n/10 j^^Tj \OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T\OT1/cmr/m/n/
 
 [29]
 
-LaTeX Warning: Command \o invalid in math mode on input line 1772.
+LaTeX Warning: Command \o invalid in math mode on input line 1774.
 
 
-LaTeX Warning: Command \o invalid in math mode on input line 1776.
+LaTeX Warning: Command \o invalid in math mode on input line 1778.
 
 [30]
-Overfull \hbox (19.49892pt too wide) detected at line 1854
+Overfull \hbox (19.49892pt too wide) detected at line 1856
 \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 ) \OMS/c
 msy/m/n/10 ^^T \OML/cmm/m/it/10 max[]\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 d[]\OT1
 /cmr/m/n/10 (\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g \OT1/cmr/m/n
@@ -260,16 +284,28 @@ n/10 2 \OML/cmm/m/it/10 V\OMS/cmsy/m/n/10 gf\OML/cmm/m/it/10 d[]\OT1/cmr/m/n/10
 
 [31] [32]
 
-LaTeX Warning: Command \o invalid in math mode on input line 1933.
+LaTeX Warning: Command \o invalid in math mode on input line 1935.
 
-[33] (./nuovadiscreta.aux) ) 
+[33]
+File: pic/griglia5.png Graphic file (type eps)
+ <pic/griglia5.png>
+
+LaTeX Warning: Command \o invalid in math mode on input line 2009.
+
+File: pic/dimostrazioneXvertice.png Graphic file (type eps)
+<pic/dimostrazioneXvertice.png> [34]
+File: pic/f1farfalla.png Graphic file (type eps)
+ <pic/f1farfalla.png>
+File: pic/f2farfalla.png Graphic file (type eps)
+ <pic/f2farfalla.png>
+[35] [36] (./nuovadiscreta.aux) ) 
 Here is how much of TeX's memory you used:
- 1727 strings out of 477986
- 24727 string characters out of 5840083
+ 2295 strings out of 477986
+ 34588 string characters out of 5840083
  1871385 words of memory out of 5000000
- 21965 multiletter control sequences out of 15000+600000
+ 22486 multiletter control sequences out of 15000+600000
  515839 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,21n,62p,238b,249s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,21n,62p,258b,249s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on nuovadiscreta.dvi (33 pages, 84768 bytes).
+Output written on nuovadiscreta.dvi (36 pages, 87728 bytes).

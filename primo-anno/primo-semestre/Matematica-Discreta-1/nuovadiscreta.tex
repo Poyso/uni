@@ -3,6 +3,8 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{multirow}
+\usepackage{graphicx}
+\graphicspath{ {/home/poiso/uni/primo-anno/Matematica-Discreta-1/} }
 \title{Matematica Discreta}
 \begin{document}
     \section{Prima parte}
@@ -1926,7 +1928,7 @@
         \begin{flushleft}
           Esempio sul quaderno
         \end{flushleft}
-        \section{Reti di communicazione}
+        \subsection{Reti di communicazione}
         \subsection*{Definizioni}
         \begin{itemize}
           \item Una rete di communicazione e' una terna (R,I,O) dove R=(V,A) e' un grafo diretto
@@ -1965,12 +1967,82 @@
               max_{\pi \in S_N}\{min_{(P_1,...,P_N)}\{c(P_1,...,P_N)\} \to \quad \text{ scritto c(R,I,O)}
             \end{equation*}
         \end{itemize}
+        \begin{flushleft}
+          Sia (R,I,O) una rete di communicazione 
+        \end{flushleft}
+        \begin{flushleft}
+          Def i vertici di (R,I,O) si dicono anche switch 
+        \end{flushleft}
+        \begin{flushleft}
+          Sia $v\in V$
+        \end{flushleft}
+        \begin{flushleft}
+          Def: La grandezza di v e' $d_+(v),d_-(v)$
+        \end{flushleft}
+        \begin{flushleft}
+          Si dice anche che v e' uno ($d_+(v),d_-(v)$)-switch
+        \end{flushleft}
+        \begin{flushleft}
+          L'obbiettivo delle rete di communicazioni
+        \end{flushleft}
+        \begin{enumerate}
+          \item congestione bassa
+          \item pochi switch
+          \item avere switch piccoli
+        \end{enumerate}
+        \subsection*{Grafi/Reti di communicazione notevoli}
+        \begin{flushleft}
+          La griglia $G_5$ e'
+        \end{flushleft}
+        \includegraphics[bb=0 0 120 120]{pic/griglia5.png}
+        \subsubsection{Teorema}
+        \begin{flushleft}
+          Sia $n\in \mathbb{P}$. Allora
+        \end{flushleft}
+        \begin{equation*}
+          c(G_N)=2
+        \end{equation*}
+        \begin{flushleft}
+          Dimostrazione: e' chiaro che la congestione non puo' essere 1 ($c(G_N)>1$ se $\pi \in S_N$)
+        \end{flushleft}
+        \begin{flushleft}
+          e' tale che $\pi(1)=n$ e $\pi(n)=1$ e se $(P_1,...,P_n)$ e' uno smistamento per $\pi \Rightarrow P_1 \cap P_n \neq \o$
+        \end{flushleft}
+        \begin{flushleft}
+          Sia $\pi \in S_N$ e sia x il della stessa riga di $i_a$ e nella stessa colonna di $o_b$. Dove $a,b\in [n]$. Poniamo (a,b)=x.
+        \end{flushleft}
+        \includegraphics[bb=0 0 150 150]{pic/dimostrazioneXvertice.png}
+        \begin{flushleft}
+          Definiamo uno smistamento $(P_1,...,P_n)$ in questo modo $P_j$ segue la riga j-esima fino alla colonna $\pi(j)$-esima $\forall j=1...n$
+        \end{flushleft}
+        \begin{flushleft}
+          Allora $c(G_N)=2$
+        \end{flushleft}
+        \begin{flushleft}
+          Sia $P_j$ un cammino tale che $(a,b)\in P_j \Rightarrow$ o j=a oppure $\pi(j)=b \Rightarrow$ j=a o j=$\pi^{-1}(b) \Rightarrow$ al piu' possibilita' per $P_j$ quindi $c(P_1,...,P_n)=2$
+        \end{flushleft}
+        Sia $k\in \mathbb{P}$
+        \begin{flushleft}
+          Def: la farfalla $F_k$ e' definita induttivamente come segue
+        \end{flushleft}
+        \begin{flushleft}
+          $F_1=$
+        \end{flushleft}
+        \includegraphics[bb=0 0 200 200]{pic/f1farfalla.png}
+        \begin{flushleft}
+          $F_2=$
+        \end{flushleft}
+        \includegraphics[bb=0 0 200 200]{pic/f2farfalla.png}
+        \begin{flushleft}
+          Dato un qualsiasi nodo di input e di output c'e' un solo cammino che li collega
+        \end{flushleft}
+        \begin{flushleft}
+          Formalmente: $F_k=(R,I,O)$ dove $R=(V,E)$ dove 
+        \end{flushleft}
+        \begin{equation*}
+          V=\{(\epsilon_1,...,\epsilon_k;i) \quad \text{ e } \quad [0,1]x[k+1]\}
+        \end{equation*}
 
-
-
-
-          
-        
 
 
       \end{document}
