@@ -2,6 +2,8 @@
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{ {/home/poiso/uni/primo-anno/Logica-Reti-Logiche-1/} }
 \begin{document}
     \section{Logica}
     \begin{flushleft}
@@ -452,4 +454,104 @@
           \begin{flushleft}
             IL resto leggere gli appunti del prof (https://www.mat.uniroma2.it/~pasquale/dida/aa2324/lrl/ep14.pdf)
           \end{flushleft}
-\end{document}
+          \section{Codifica numeri in virgola mobile}
+          \subsection{ Standard IEEE 754}
+          \subsubsection*{IEEE 754 a precisione singola (32 bit)}
+          \includegraphics[bb=0 0 250 200]{pic/ieee32bit.png}
+          \subsubsection*{IEEE 754 a precisione doppia (64 bit)}
+          \includegraphics[bb=0 0 250 200]{pic/ieee64bit.png}
+          \subsection{Come funziona la codifica IEEE 754}
+          \begin{flushleft}
+           Come possiamo vedere dalle immagini sopra la codifica e divisa in 3 settori
+          \end{flushleft}
+          \begin{itemize}
+            \item Il segno 
+            \item l esponente
+            \item la mantissa
+          \end{itemize}
+          \begin{flushleft}
+            \textbf{Il segno} ha un solo bit a disposizione dove se il bit e' impostato a 1 
+            vuol dire che il numero e' negativo altrimenti e' positivo
+          \end{flushleft}
+          \begin{flushleft}
+            \textbf{L'esponente} ha a disposzione 8 bit nella versione a 32 bit del IEEE e 11 bit
+            invece nella versione a 64 bit. In questi bit viene salvato il numero che elevato alla
+            2 ci riportera al numero originale (perche durante la conversione noi prendiamo il numero
+            in binario e lo portiamo ad una versione del tipo e.g $1,011101 * 2^6$) dove poi l'esponente
+            sara codificato in codifica ad eccesso, cioe' il numero trovato prima di convertirlo in binario
+            dovra' essere addizionato a 127 e poi essere convertito. Nella decodifica invece una volta tradotto
+            il numero da binario a decimale si dovra sottrarre 127.
+          \end{flushleft}
+          \begin{flushleft}
+            \textbf{La mantissa} e' composta da 23 bit nella versione a precisione singola e 52 bit
+            nella versione a precisione doppia. In questa parte della codifica viene salvata la parte
+            prima della virgola del numero quando si vorra trovare l esponente e.g $1,011101 * 2^6$
+            cioe' l'esempio di prima, nella parte riservaata all'esponente verra' salvato 133 in binario
+            e nella parte della mantissa verra salvato "011101"
+          \end{flushleft}
+          \begin{flushleft}
+            Una volta che avremmo la nostra sequenza binaria dovremmo convertirla in esadecimale 
+            prendendo 4 bit alla volta e convertendoli in esadecimale 
+          \end{flushleft}
+          \begin{flushleft}
+            Per decodificare un numero scritto con lo standard IEEE si puo' agire intuitivamente
+            facendo analogamente l'opposto della codifica
+          \end{flushleft}
+           \subsection{Numeri particolari} 
+           \begin{flushleft}
+            Queste sono particolari sequenze di bit che di conseguenza hanno valori particolari
+           \end{flushleft}
+           \begin{itemize}
+             \item 0
+               \begin{itemize}
+                 \item Qualsiasi bit per il segno
+                 \item Tutti i bit a 0 per l'esponente
+                 \item Tutti i bit a 0 per la mantissa
+               \end{itemize}
+             \item $+\infty$
+               \begin{itemize}
+                 \item Il bit del segno impostato a 0
+                 \item Tutti i bit a 1 per l'esponente
+                 \item Tutti i bit a 0 per la mantissa
+               \end{itemize}
+             \item $-\infty$
+               \begin{itemize}
+                 \item Il bit del segno impostato a 1
+                 \item Tutti i bit a 1 per l'esponente
+                 \item Tutti i bit a 0 per la mantissa
+               \end{itemize}
+             \item NaN (Not a Number)
+               \begin{itemize}
+                 \item Qualsiasi bit per il segno
+                 \item Tutti i bit a 1 per l'esponente
+                 \item Una sequenza di bit diversa da 0
+               \end{itemize}
+           \end{itemize}
+          \section{Codificare caratteri}
+          \begin{flushleft}
+            Negli anni 60 fu inventata la codifica ad ASCII che permetteva di codificare $2^7$ caratteri ( per un totale di 128 caratteri) 
+          \end{flushleft}
+          \begin{flushleft}
+            Questo codifica non fu standardizzata perche' molti paesi hanno caratteri differenti da utilizzare
+            quindi ogni continente/paese aveva un modo per codificare i caratteri diverso dagli altri
+          \end{flushleft}
+          \begin{flushleft}
+            Negli ultimi anni e stato pero standarzittato un nuovo "modo" che si chiama unicode che codifica
+            da 0x000000 a 0xFFFFFF
+          \end{flushleft}
+          \begin{flushleft}
+            Le codifiche che implementano questo nuovo metodo sono le UTF (utf-8,16,32) quella piu' utilizzata al momento e' utf-8
+            ed e' una codifica a lunghezza variabile 
+          \end{flushleft}
+          \begin{flushleft}
+           La codifica sfrutta 1 byte che inizia tanti 1 quanto e' il numero di byte utilizzato da un carattere questa sequenza poi termina con 0 
+           poi per il resto del byte verra' occupato dalla codifica del carattere gli altri byte sucessivi inizieranno con la sequenza 10
+          \end{flushleft}
+          E.g
+          \begin{flushleft}
+            1 byte \quad     1 0 - - - - - - \quad \\
+            2 byte  \quad    1 1 0 - - - - -      \quad 1 0 - - - - - - \\
+            3 byte  \quad    1 1 1 0 - - - -      \quad 1 0 - - - - - - \quad       1 0 - - - - - - \\
+            4 byte  \quad    1 1 1 1 0 - - -      \quad 1 0 - - - - - -      \quad 1 0 - - - - - -     \quad 1 0 - - - - - -\\
+          \end{flushleft}
+        \end{document}
