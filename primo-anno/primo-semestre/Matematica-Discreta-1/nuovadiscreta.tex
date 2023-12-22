@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{array}
 \graphicspath{ {/home/poiso/uni/primo-anno/Matematica-Discreta-1/} }
 \title{Matematica Discreta}
 \begin{document}
@@ -2073,8 +2074,87 @@
           Dimostrazione (idea) 
         \end{flushleft}
         \begin{flushleft}
-          
+          Sia $\pi \in S_n$ ($N=2^k$) e sia $(P_1,...,P_n)$ uno smistamento per $\pi$. Sia
         \end{flushleft}
+        \begin{equation*}
+          (\epsilon_1,...,\epsilon_k;i)\in V
+        \end{equation*}
+        \begin{flushleft}
+          Sia $P_j$ tale che $x\in P_j$. Allora il nodo di output di $P_j$ e' della forma
+        \end{flushleft}
+        \begin{equation*}
+          (\epsilon_1,...,\epsilon_{i-1},x_i,...,x_k,k+1)
+        \end{equation*}
+        \begin{flushleft}
+          $\Rightarrow 2^{k-i+1}$ possibilita'. Similmente il nodo di input di $P_j$ e' della forma
+        \end{flushleft}
+        \begin{equation*}
+          (x_1,...,x_{i-1},\epsilon_i,...,\epsilon_k;j)
+        \end{equation*}
+        \begin{flushleft}
+          $\Rightarrow 2^{i-1}$ sono 
+        \end{flushleft}
+        \begin{equation*}
+          min\{2^{i-1},2^{k-i+1}\}
+        \end{equation*}
+        \begin{flushleft}
+          possibilita' per $P_j$ ma
+        \end{flushleft}
+        \begin{equation*}
+          min\{2^{i-1},2^{k-i+1}\}\leq \begin{cases}
+            2^{\frac{k}{2}} \quad \text{ se k e' pari }\\ 
+            2^{\frac{k-1}{2}} \quad \text{  se k e' dispari }
+          \end{cases}
+        \end{equation*}
+        \begin{flushleft}
+          che equivale a dire
+        \end{flushleft}
+        \begin{equation*}
+          min\{i-1,k-i+1\}\leq \begin{cases}
+            \frac{k}{2} \quad \text{ se k e' pari }\\ 
+            \frac{k-1}{2} \quad \text{  se k e' dispari }
+          \end{cases}
+        \end{equation*}
+        Concludendo
+        \begin{center}
+          \begin{tabular}{ | m{1cm} | m{3cm}| m{3cm} | m{9em} | m{3cm} |} 
+            \hline
+            Rete & numero di nodi& numero di terminali& congestione& grandezza degli switch\\ 
+            \hline
+            $G_N$ & $N(N+2)$ & N& 2& 2x2\\ 
+            \hline
+            $F_k$ & $N(log_2(N)+1)$ & N (=$2^k$)& $\sqrt{N}$ se k e' pari,\quad $\sqrt{\frac{N}{2}}$ se k e' dispari& 2x2\\ 
+            \hline
+          \end{tabular}
+        \end{center}
+        \subsection{Orari Paralleli}
+        \begin{flushleft}
+          Sia D=(V,A) un grafo diretto
+        \end{flushleft}
+        \begin{flushleft}
+          Def: un orario parallelo per D e' una partizione $\{B_0,B_1,...,B_k\}$ di v tale che 
+        \end{flushleft}
+        \begin{equation*}
+          0 \leq i < j \leq k \Rightarrow \begin{cases}
+            \text{nessun vertice di $B_i$} \\ 
+            \text{e' raggiungibile da alcun vertice di $B_j$}
+          \end{cases}
+        \end{equation*}
+        \begin{flushleft}
+          $max\{\mid B_0\mid ,...,\mid B_k\mid \}$ si dice il numero di processori del nostro orario parallelo,
+          gli elementi di $B_i$ si dicono il passo i-esimo dell'orario parallelo
+        \end{flushleft}
+        Sia $x \in V$
+        \begin{flushleft}
+          Def: un sentiero critico per x e' un sentiero diretto ($x_0,x_1,...,x_r$) in D. Tale che $x_r=x$ e se ($y_0,y_1,...,y_s$) e' un altro sentiero tale che $y_s=x\Rigtarrow r\geq s$
+          (il piu' lungo sentiero che finisce in x)
+        \end{flushleft}
+        \begin{flushleft}
+          Def: La profondita' di x, scritto dp(x) e' la lunghezza di un sentiero critico per x
+        \end{flushleft}
+
+
+
 
 
 
