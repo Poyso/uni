@@ -1538,8 +1538,8 @@
         \subsection*{Definizioni}
         \begin{itemize}
           \item G e' ciclico se ha cicli di lunghezza $>2$
-          \item G e' un albero se G e' connesso e ciclico
-          \item G e' una foresta se G e' ciclico (insieme di alberi)
+          \item G e' un albero se G e' connesso e aciclico (non ha nessun ciclo)
+          \item G e' una foresta se G e' aciclico (insieme di alberi)
         \end{itemize}
         \begin{flushleft}
           SIa $S \subseteq V$
@@ -2146,7 +2146,8 @@
         \end{flushleft}
         Sia $x \in V$
         \begin{flushleft}
-          Def: un sentiero critico per x e' un sentiero diretto ($x_0,x_1,...,x_r$) in D. Tale che $x_r=x$ e se ($y_0,y_1,...,y_s$) e' un altro sentiero tale che $y_s=x\Rigtarrow r\geq s$
+          Def: un sentiero critico per x e' un sentiero diretto ($x_0,x_1,...,x_r$) in D. Tale che $x_r=x$ e se ($y_0,y_1,...,y_s$) e' 
+          un altro sentiero tale che $y_s=x\Rightarrow r \geq s$
           (il piu' lungo sentiero che finisce in x)
         \end{flushleft}
         \begin{flushleft}
