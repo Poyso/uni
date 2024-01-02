@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2023.12.19)  29 DEC 2023 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2023.12.19)  2 JAN 2024 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,44 +293,51 @@ n/10 2 \OML/cmm/m/it/10 V\OMS/cmsy/m/n/10 gf\OML/cmm/m/it/10 d[]\OT1/cmr/m/n/10
  []
 
 [31] [32]
-
-LaTeX Warning: Command \o invalid in math mode on input line 1936.
+File: pic/grafodirettoes.png Graphic file (type eps)
+ <pic/grafodirettoes.png>
+Overfull \hbox (56.5pt too wide) in paragraph at lines 1932--1933
+[] 
+ []
 
 [33]
+
+LaTeX Warning: Command \o invalid in math mode on input line 1953.
+
+[34]
 File: pic/griglia5.png Graphic file (type eps)
  <pic/griglia5.png>
 
-LaTeX Warning: Command \o invalid in math mode on input line 2010.
+LaTeX Warning: Command \o invalid in math mode on input line 2027.
 
 File: pic/dimostrazioneXvertice.png Graphic file (type eps)
-<pic/dimostrazioneXvertice.png> [34]
+<pic/dimostrazioneXvertice.png> [35]
 File: pic/f1farfalla.png Graphic file (type eps)
  <pic/f1farfalla.png>
 File: pic/f2farfalla.png Graphic file (type eps)
  <pic/f2farfalla.png>
-[35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 2122--2123
+[36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 2139--2140
 []|\OT1/cmr/m/n/10 grandezza degli
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 2126--2126
+Underfull \hbox (badness 2057) in paragraph at lines 2143--2143
 []|$[]$ \OT1/cmr/m/n/10 se k e' pari,
  []
 
 
-Overfull \hbox (91.92763pt too wide) in paragraph at lines 2120--2129
+Overfull \hbox (91.92763pt too wide) in paragraph at lines 2137--2146
  [] 
  []
 
-[37] (./nuovadiscreta.aux) ) 
+[38] (./nuovadiscreta.aux) ) 
 Here is how much of TeX's memory you used:
- 2362 strings out of 477986
- 35630 string characters out of 5840083
+ 2381 strings out of 477986
+ 36183 string characters out of 5840083
  1869385 words of memory out of 5000000
- 22550 multiletter control sequences out of 15000+600000
+ 22565 multiletter control sequences out of 15000+600000
  515839 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,20n,62p,238b,251s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on nuovadiscreta.dvi (37 pages, 92204 bytes).
+Output written on nuovadiscreta.dvi (38 pages, 93200 bytes).

@@ -1927,8 +1927,25 @@
             \end{equation*}
         \end{itemize}
         \begin{flushleft}
-          Esempio sul quaderno
+          Esempio 
         \end{flushleft}
+        \includegraphics[bb=0 0 400 200]{pic/grafodirettoes.png}
+        \begin{itemize}
+          \item (2,11,2,3,4) e' un cammino diretto
+          \item (1,2,3,4) e' un sentiero diretto
+          \item (7,5,8,7,5,8,7) e' un cammino diretto chiuso
+          \item (7,5,8,7) e' un ciclo diretto
+          \item (2,11,2) e' un ciclo diretto
+          \item (1,1) e' un ciclo diretto di lunghezza 1
+          \item 4 e 9 sono comparabili
+          \item 1 e 6 sono incomparabili
+          \item (5,8,10) sono una catena
+          \item (6,1) e' un anticatena
+          \item (2,6,4) non e' ne una catena, ne un anticatena
+          \item $d_+(5)=1$, $d_-(5)=2$
+          \item $d_+(1)=3$, $d_-(1)=1$
+          \item $d_+(12)=0$, $d_-(12)=1$
+        \end{itemize}
         \subsection{Reti di communicazione}
         \subsection*{Definizioni}
         \begin{itemize}
@@ -2153,11 +2170,5 @@
         \begin{flushleft}
           Def: La profondita' di x, scritto dp(x) e' la lunghezza di un sentiero critico per x
         \end{flushleft}
-
-
-
-
-
-
 
       \end{document}
