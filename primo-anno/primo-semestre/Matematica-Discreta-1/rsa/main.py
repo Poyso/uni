@@ -22,9 +22,13 @@ def extended_gdc(a, b):
 
 
 d = phi + extended_gdc(phi, e)[2]
-modulo_d = d % phi
-modulo_e = e % phi
-print(modulo_d)
-print(modulo_e)
+inversa_d = d % phi
+inversa_e = e % phi
+print(inversa_d)
+print(inversa_e)
+
+print("Primo valore : ", extended_gdc(phi, e)[0])
+print("Secondo valore : ", extended_gdc(phi, e)[1])
+print("Terzo valore : ", extended_gdc(phi, e)[2])
 # pubblichiamo "n" ed "e"
 # teniamo segreti "p","q" e "d"
