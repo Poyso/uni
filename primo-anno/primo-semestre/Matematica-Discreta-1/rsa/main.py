@@ -24,11 +24,14 @@ def extended_gdc(a, b):
 d = phi + extended_gdc(phi, e)[2]
 inversa_d = d % phi
 inversa_e = e % phi
-print(inversa_d)
-print(inversa_e)
-
-print("Primo valore : ", extended_gdc(phi, e)[0])
-print("Secondo valore : ", extended_gdc(phi, e)[1])
-print("Terzo valore : ", extended_gdc(phi, e)[2])
+print("Inversa d ", inversa_d)
+print("Inverssa e ", inversa_e)
 # pubblichiamo "n" ed "e"
 # teniamo segreti "p","q" e "d"
+
+m = 89  # il messagio da criptare e decriptare
+
+crypted_m = m ** e % n
+print(crypted_m)
+decrypted_m = m ** d % n
+print(crypted_m)
