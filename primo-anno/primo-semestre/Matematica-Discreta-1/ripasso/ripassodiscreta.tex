@@ -1,21 +1,174 @@
 \documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \title{Ripasso Matematica Discreta}
-\section{Insiemi}
-\subsection{Proprieta' degli insiemi}
-\subsubsection*{Proprieta' associative}
-\begin{flushleft}
-  $A \cap (B \cap C)=C\cap (A \cap B)$
-  $A \cap uB \cup C)=C\cup (A \cup B)$
-\end{flushleft}
-\subsubsection*{Proprieta' Dissertive}
-\begin{flushleft}
-  $A \cap (B \cup C)=(A\cap B)\cup(A\cap C)$
-  $A \cup (B \cap C)=(A\cup B)\cap(A\cup C)$
-\end{flushleft}
-\subsubsection*{Leggi di de Morgan}
-\begin{flushleft}
-  $(A\cap B)`=A`\cup B`$
-  $(A\cup B)`=A`\cap B`$
-\end{flushleft}
+\begin{document}
+  \section{Insiemi}
+  \subsection{Proprieta' degli insiemi}
+  \subsubsection*{Proprieta' associative}
+  \begin{itemize}
+    \item $A \cap (B \cap C)=C\cap (A \cap B)$
+    \item $A \cap uB \cup C)=C\cup (A \cup B)$
+  \end{itemize}
+  \subsubsection*{Proprieta' Dissertive}
+  \begin{itemize}
+    \item $A \cap (B \cup C)=(A\cap B)\cup(A\cap C)$
+    \item $A \cup (B \cap C)=(A\cup B)\cap(A\cup C)$
+  \end{itemize}
+  \subsubsection*{Leggi di de Morgan}
+  \begin{itemize}
+    \item $(A\cap B)`=A`\cup B`$
+    \item $(A\cup B)`=A`\cap B`$
+  \end{itemize}
+  \begin{flushleft}
+    Verificare con il diagramma di von neumann se certe formule sono vere o false
+  \end{flushleft}
+  \begin{itemize}
+    \item Se sono vere:
+      \begin{itemize}
+        \item Dimostrarle con ragionamento
+        \item Dimostrarle con tabelle di verita'
+      \end{itemize}
+    \item Se e'falso fare un esempio assegnando dei numeri all'insieme
+  \end{itemize}
+  \section{Numeri}
+  \subsection{Principio di Induzione}
+  \begin{flushleft}
+    Principio di induzione serve a dimostrare che verificando che un passo base sia vero
+    e assumendo che l'ipotesi sia vera possiamo dimostrare che 2 espressioni sono uguali
+  \end{flushleft}
+  \subsection{Principio del buon ordinamento}
+  \begin{flushleft}
+    Il principio del buon ordinamento (WOP) dice che dato un insieme non vuoto ci sara' sempre 
+    un numero piu' piccolo di tutti gli altri
+  \end{flushleft}
+  \subsection{Gli insiemi numerici}
+  \begin{flushleft}
+    Li insiemi numerici li conosciamo
+  \end{flushleft}
+  \subsection{Numeri Primi}
+  \begin{itemize}
+    \item Numero primo e' un numero che si puo' dividere solo per se stesso o per 1
+    \item 2 numeri si dicono co primi se il loro massimo comune divisore e' 1
+    \item Dati 2 numeri primi diversi tra loro questi sono coprimi
+    \item Un numero si dice perfetto se la somma dei suoi divisori e uguale al numero stesso
+  \end{itemize}
+  \subsection*{Teorema}
+  \begin{flushleft}
+    Dato un numero, questo numero puo' essere o primo o un prodotto di primi.
+  \end{flushleft}
+  \subsection*{Teorema}
+  \begin{flushleft}
+    Ci sono infiniti numeri primi
+  \end{flushleft}
+  \subsection*{Teorema Hadamard}
+  \begin{equation*}
+    \lim_{n \to \infty} \frac{\pi(n)}{\frac{x}{ln(x)}}
+  \end{equation*}
+  \subsection{Teorema fondamentale dell'aritmetica}
+  \begin{flushleft}
+    Dato un numero, questo e' un numero primo oppure e' un prodotto di numeri primi
+  \end{flushleft}
+  \section{Equazione Diofantea Lineare}
+  \begin{flushleft}
+    L'equazione diofantea 
+  \end{flushleft}
+  \begin{equation*}
+    ax+by=n
+  \end{equation*}
+  \begin{flushleft}
+    L'equazione sopra riportata ha soluzioni solo e solo se $(a,b)\mid n$ tramite questo sistema di equazioni
+  \end{flushleft}
+  \begin{equation*}
+    \begin{cases}
+      x=x_0-\frac{b}{(a,b)}t \\
+      y=y_0+\frac{a}{(a,b)}t \\
+    \end{cases}
+  \end{equation*}
+  Dove
+  \begin{itemize}
+    \item a e b sono i valori dell'equiazione originale
+    \item t e' un numero intero qualsiasi
+    \item $x_0$ e $y_0$ sono numeri che possono essere calcolati tramite l identita' di Bezout
+  \end{itemize}
+  \section{Classi di resto}
+  \begin{equation*}
+    a \equiv_n b \iff n\mid (b-a)
+  \end{equation*}
+  \begin{flushleft}
+    La scrittura sopra indicata vuol dire anche che a e b hanno lo stess resto se divisi per n
+  \end{flushleft}
+  \begin{flushleft}
+    Le classi di resto hanno una relzione di congruenza questo vuol dire
+  \end{flushleft}
+  \begin{itemize}
+    \item $a \equiv_n a$
+    \item $a \equiv_n b \to b \equiv_n a$
+    \item $a \equiv_n b \land b \equiv_n c \to a \equiv_n c$
+  \end{itemize}
+  \subsection{Funzione di Eulero}
+  \begin{equation*}
+    \phi(n)=\mid \{ i \in \mathbb{P} : 1 \leq i \leq n,(n,i)=1 \} \mid
+  \end{equation*}
+  \begin{flushleft}
+    La funzione di Eulero calcola tutti i numeri piu piccoli di n fino ad n che sono coprimi con n
+  \end{flushleft}
+  \begin{flushleft}
+    Siano p,q primi allora:
+  \end{flushleft}
+  \begin{equation*}
+    \phi(p*q)=(p-1)(q-1)
+  \end{equation*}
+  \subsection{Teorema di Eulero}
+  \begin{flushleft}
+    (n,k)=1. Allora
+  \end{flushleft}
+  \begin{equation*}
+    k^{phi(n)} \equiv_n 1
+  \end{equation*}
+  \subsection{Teorema di Eulero-Fermat}
+  \begin{flushleft}
+    Siano $k \in \mathbb{Z}$ e $p \in \mathbb{P}$, tale che p e' un numero primo. Allora:
+  \end{flushleft}
+  \begin{equation*}
+    k^{p-1} \equiv_n 1
+  \end{equation*}
+  \subsection{Codice RSA}
+  \begin{flushleft}
+    Il codice RSA, e un metodo di cifrare usato adesso per cifrare e decifrare un messaggio
+  \end{flushleft}
+  \begin{enumerate}
+    \item Preparazione
+      \begin{enumerate}
+        \item Generare 2 numeri primi p e q, che sono diversi tra loro
+          \begin{flushleft}
+            n=pq
+          \end{flushleft}
+        \item Poi trovare un numero $e$ tale che $(e,(p-1)(q-1))=1$
+        \item Poi trovare un numero $d$ che sia l'inversa moltiplicativa di $[e]_{(p-1)(q-1)}$
+        \item Poi pubblicare $n,e$ e tenere segreto $p,q,d$
+      \end{enumerate}
+    \item Codifica
+      \begin{flushleft}
+        Si prenda un messagio m tale che (m,n)=1, poi si calcoli
+      \end{flushleft}
+      \begin{equation*}
+        m`=[m^e]_n
+      \end{equation*}
+    \item Decodifica
+      \begin{flushleft}
+        Prendere il messaggio cifrato e eseguire il seguente calcolo
+      \end{flushleft}
+      \begin{equation*}
+        [m`^d]_n
+      \end{equation*}
+  \end{enumerate}
+  \begin{flushleft}
+    Questo tipo di codifica funziona perche' e' difficile fattorizzare n se n e' un numero
+    molto grande (migliaia di cifre)
+  \end{flushleft}
+
+
+\end{document}
 
 
