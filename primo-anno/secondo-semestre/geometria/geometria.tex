@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{inputenc}
+\title{Geometria e Algebra}
+\begin{document}
+\section{Geometria affine (richiami)}
+\begin{flushleft}
+	In geometria useremo dei spazi in cui lavoreremo che sono: retta, piano e spazio
+\end{flushleft}
+\begin{itemize}
+	\item retta (euclidea) affine $(A^1)$
+	\item piano affine ($\pi$ = piano) ($A^2$) $\pi \supseteq r$
+	      \begin{flushleft}
+		      $r_1$ e $r_2$ rette in $\pi$ sono:
+	      \end{flushleft}
+	      \begin{itemize}
+		      \item inicidenti se $r_1 \cap r_2=\{ P \}$ (p punto)
+		      \item parallele se $r_1 \cap r_2=\emptyset$ e se $ r_1 =r_2$
+	      \end{itemize}
+	\item spazio affine
+	      \begin{flushleft}
+		      I suoi sottoinsiemi notevoli sono:
+	      \end{flushleft}
+	      \begin{itemize}
+		      \item punti (P)
+		      \item rette (r)
+		      \item piani ($\pi$)
+	      \end{itemize}
+	      \begin{flushleft}
+		      Ora le varie regole
+	      \end{flushleft}
+	      \begin{itemize}
+		      \item $\pi$ e $\pi$' nello spazio sono:
+		            \begin{itemize}
+			            \item incidenti se $\pi \cap \pi ' =r$
+			            \item paralleli se $\pi \cap \pi ' =\emptyset$ e se $\pi = \pi '$
+		            \end{itemize}
+		      \item r e $\pi$ nello spazio sono:
+		            \begin{itemize}
+			            \item incidenti se $\pi \cap r = \{ P \}$
+			            \item paralleli se $\pi \cap r = \emptyset$ e se $r \subseteq \pi$
+		            \end{itemize}
+		      \item r e r' sono:
+		            \begin{itemize}
+			            \item complanari se $\exists \pi: \quad \pi \subseteq r \land \pi \subseteq r'$
+			            \item sgherbe se $r \cap r' = \emptyset$ e se $r \nparallel r'$
+		            \end{itemize}
+	      \end{itemize}
+\end{itemize}
+
+\section{Vettori orientati}
+\begin{flushleft}
+	I vettori orientati sono segmenti che partono da un punto di origine O e arrivano ad un punto P, se si vogliono avere piu' vettori
+	questi devono partire tutti dallos stesso punto O
+\end{flushleft}
+\begin{flushleft}
+	Def: Esiste una funzione $\Phi_o : A_o \rightarrow V_o^{1/2/3}$
+\end{flushleft}
+\begin{equation*}
+	\Phi_o(P)=\overrightarrow{OP}
+\end{equation*}
+\begin{flushleft}
+	Nota: La funzione $\Phi_o$ e' biettiva
+\end{flushleft}
+\subsection{Somma tra vettori}
+\begin{flushleft}
+	Def:$\forall v = \overrightarrow{OP}$ e $v' = \overrightarrow{OP}' in V_o^{1/2/3} \to \exists ! v''=\overrightarrow{OP}''$
+\end{flushleft}
+\begin{flushleft}
+	Per la somma tra vettori si costruisce un parallelogramma con le parallele di entrambi i vettori di cui si intende sommare
+	e poi si traccia una diagonale dal punto O fino al vertice che si formera e questa diagonale rappresentera' la somma di 2 vetttori
+\end{flushleft}
+\subsection{Proprieta' della somma in $V_o^{1/2/3}$}
+\begin{enumerate}
+	\item La somma e' associativa
+	\item $\exists \overrightarrow{OO} \in V_o^{1/2/3}$ e' un elemento neutro della somma
+	\item $\forall \overrightarrow{OP}, \exists \overrightarrow{OP}' \in V_o^{1/2/3}$ tale che
+	      \begin{equation*}
+		      \overrightarrow{OP} +\overrightarrow{OP}' = \overrightarrow{OO}=\overrightarrow{OP}' +\overrightarrow{OP}
+	      \end{equation*}
+	\item La somma e' commutativa
+\end{enumerate}
+\section{Moltiplicazione dello scalare}
+\begin{flushleft}
+	Def: $\forall v = \overrightarrow{OP} \in V_o^n$ (n=1,2,3)
+	$\forall t \in \mathbb{R}, \exists !t: v=t*\overrightarrow{OP} \in V^n_o$ tale che
+	$t*\overrightarrow{OP}=\overrightarrow{OP_t}$ dove $P_t \in A^t$ e' dato da
+\end{flushleft}
+\begin{itemize}
+	\item Se $t=0$ $\to$ $P_t:= 0 \to t*\overrightarrow{OP}=\overrightarrow{OO}$
+	\item Se $t>0$ $\to$ $P_t$ e' nella retta di $\overrightarrow{OP}$:
+	      \begin{equation*}
+		      \frac{lungh(\overrightarrow{OP_t})}{lungh(\overrightarrow{OP})} = t = |t|
+	      \end{equation*}
+	\item Se $t<0$:
+	      \begin{equation*}
+		      \frac{lungh(\overrightarrow{OP_t})}{lungh(\overrightarrow{OP})} = -t = |t|
+	      \end{equation*}
+\end{itemize}
+\begin{flushleft}
+	Tutto questo e' vero se $\overrightarrow{OP} \neq \overrightarrow{OO}$
+	se invece $\overrightarrow{OP} = \overrightarrow{OO}$ allora $t*\overrightarrow{OO}=\overrightarrow{OO}$
+\end{flushleft}
+\begin{flushleft}
+	Quindi esiste una funzione:
+\end{flushleft}
+\begin{itemize}
+	\item $\mathbb{R}xV_o^n \to V_o^n$
+	\item $(t,v) \to t*v$
+\end{itemize}
+\subsection{Proprieta' della moltiplicazione}
+\begin{flushleft}
+	$\forall v',v'' \in V_o^n$\\
+	$\forall t',t'' \in \mathbb{R}$
+\end{flushleft}
+\begin{enumerate}
+	\item $t' * (t''*v)=(t''*t')*v$
+	\item $1*v=v$
+	\item $t' + (t''+v)=(t''+t')+v$
+	\item $t*(v'+v'')=(t*v')+(t*v'')$
+\end{enumerate}
+\end{document}
+
