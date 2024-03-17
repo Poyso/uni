@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2024.1.29)  13 MAR 2024 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=latex 2024.1.29)  17 MAR 2024 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -151,10 +151,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Here is how much of TeX's memory you used:
  1755 strings out of 477986
  25332 string characters out of 5840084
- 1872385 words of memory out of 5000000
+ 1878385 words of memory out of 5000000
  21986 multiletter control sequences out of 15000+600000
  520186 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,14n,62p,225b,234s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on geometria.dvi (4 pages, 10460 bytes).
+Output written on geometria.dvi (4 pages, 13652 bytes).
