@@ -230,6 +230,77 @@ quindi possiamo dedurre questo
 	\exists ! (s,t) \in \mathbb{R}^2:\overrightarrow{OP}=\overrightarrow{OP_0}+s\overrightarrow{v}+t\overrightarrow{w}
 \end{equation*}
 
+\section{Campi}
+\begin{flushleft}
+	Def: Campi sono insiemi di numeri in cui si fanno operazioni
+\end{flushleft}
+\begin{flushleft}
+	K e' un campo se e' un insieme con 2 operazioni
+\end{flushleft}
+\begin{itemize}
+	\item + : $KxK \to K$
+	\item * : $KxK \to K$
+\end{itemize}
+\subsection{Somma nei campi}
+\begin{enumerate}
+	\item La somma e' assiciativa
+	\item $\exists O_k \in \mathbb{K} : x+O_k=x \quad \forall x\in \mathbb{K}$
+	\item $\forall x \in  \mathbb{K},\exists (-x) \in \mathbb{K}:x+(-x)=O_k$
+	\item x+y=y+x $\forall x,y \in \mathbb{K}$
+\end{enumerate}
+\subsection{Prodotto nei campi}
+\begin{enumerate}
+	\item Il prodotto e' assiciativa
+	\item $\exists 1_k \in \mathbb{K} : x*1_k=x \quad \forall x\in \mathbb{K}$
+	\item $\forall x \in  \mathbb{K},\exists x^{-1} \in \mathbb{K}:x*x^{-1}=1_k$
+	\item x+y=y+x $\forall x,y \in \mathbb{K}$
+\end{enumerate}
+\begin{itemize}
+	\item D $\rightarrow$ x*(y+z)=(x*y)+(x*z)
+	\item D $\leftarrow$ (x+y)*z)=(z*y)+(x*z)
+\end{itemize}
+\subsection*{Esempi}
+\begin{enumerate}
+	\item $\mathbb{N}:$ no , $\mathbb{Z}: $ no
+	\item $\mathbb{Q}:$ si, $\mathbb{R}: $ si
+	\item $\mathbb{Z}_n$ e' un campo se e soltanto se se n e' un numero primo
+\end{enumerate}
+\section{Spazi Vettoriali}
+\begin{flushleft}
+	Def: spazio veottoriale su K e' un insieme V con 2 funzioni:
+\end{flushleft}
+\begin{itemize}
+	\item +: $VxV \to V \quad \quad (v',v'') \to v' + v''$
+	\item *: $KxV \to V \quad \quad (k,v)\to kv$
+\end{itemize}
+\subsection*{Proprieta'}
+\subsubsection*{Somma}
+\begin{enumerate}
+	\item Associativa $\forall v,w,u \in \mathbb{V}$
+	\item $\exists O_v \in V: $ elemento neutro $\forall v \in \mathbb{V}$
+	\item $\forall v \in  \mathbb{V},\exists (-v) \in \mathbb{V}:v+(-v)=O_v$
+	\item v+w=w+v $\quad \forall v,w \in \mathbb{V}$
+\end{enumerate}
+\subsubsection*{Prodotto}
+\begin{enumerate}
+	\item Associativa $\forall v,w,u \in \mathbb{V}$
+	\item $\exists 1_v \in V: $ elemento neutro $\forall v \in \mathbb{V}$
+	\item $\forall v \in  \mathbb{V},\exists v^{-1} \in \mathbb{V}:v+v^{-1}=O_v$
+	\item v*w=w*v $\quad \forall v,w \in \mathbb{V}$
+\end{enumerate}
+\begin{itemize}
+	\item $k*(v_1+v_2)=(k*v_1)+(k*v_2) \quad \quad \forall v_1,v_2 \in \mathbb{V}, \forall k \in \mathbb{K}$
+	\item $v*(k_1+k_2)=(v*k_1)+(v*k_2) \quad \quad \forall k_1,k_2 \in \mathbb{K}, \forall v \in \mathbb{V}$
+\end{itemize}
+\begin{flushleft}
+	Def: $\forall$ spazio vettoriale V (su K) e' un sotto spazio di V e' un sottoinsieme
+\end{flushleft}
+\begin{equation*}
+	W+W \subseteq W \quad  \text{ cioe' } \quad w_1+w_2 \in W \quad \forall w_1,w_2 \in W
+\end{equation*}
+\begin{equation*}
+	K*W \subseteq W \quad \text{ cioe' } \quad k*v \in W \quad \forall k \in \mathbb{K}, \forall w\in W
+\end{equation*}
 
 \end{document}
 
