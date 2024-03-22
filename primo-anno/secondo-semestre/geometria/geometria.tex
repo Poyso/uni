@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{inputenc}
+\usepackage{graphicx}
 \title{Geometria e Algebra}
 \begin{document}
 \section{Geometria affine (richiami)}
@@ -211,6 +212,7 @@ quindi possiamo dedurre questo
 \begin{flushleft}
 	Def:  $\overrightarrow{v_r}$ si dice vettore direttore
 \end{flushleft}
+\includegraphics[bb=0 0 350 100]{equazione-retta-v.png}
 \subsection*{Equazione vettoriale per piani}
 \begin{flushleft}
 	$\forall \overrightarrow{v} \in V^3_0, \exists ! (s,t,d):
@@ -295,12 +297,57 @@ quindi possiamo dedurre questo
 \begin{flushleft}
 	Def: $\forall$ spazio vettoriale V (su K) e' un sotto spazio di V e' un sottoinsieme
 \end{flushleft}
+\begin{flushleft}
+	Un $W \subseteq V$ e' sottospazio (vettoriale) se:
+\end{flushleft}
 \begin{equation*}
-	W+W \subseteq W \quad  \text{ cioe' } \quad w_1+w_2 \in W \quad \forall w_1,w_2 \in W
+	W+W \subseteq W \quad K*W \subseteq W \quad W \neq \emptyset
+\end{equation*}
+\begin{flushleft}
+	($W\leq V$) e' un rafforzamento di $\subseteq$
+\end{flushleft}
+\subsubsection*{Lemma:}
+\begin{flushleft}
+	Se V e' un sottospazio vettoriale e $W \leq V$ allora $W$ e' uno spazio vettoriale con somma e prodotto dati da quelli di V ristretti ai vettori di $W$
+\end{flushleft}
+\textbf{Esempi:}
+\begin{enumerate}
+	\item $Der(a,b)=\{ f \in \mathbb{R}^{(a,b)} | \text{ f e' derivabile } \}$
+	\item $C^0(a,b)= \{ f \in \mathbb{R}^{(a,b)} | \text{ f e' continua } \}$
+	      \begin{equation*}
+		      Der(a.b) \subseteq C^0(a,b) \land Der(a,b) \leq C^0(a,b)
+	      \end{equation*}
+	\item $Conv(\mathbb{R}^{\mathbb{N}}) = \{ \{a\}_n | \exists \text{ limite $\in \mathbb{R}$ (convergente)}\}$
+	      \begin{flushleft}
+		      e' sottospazio vettoriale di $\mathbb{R}^{\mathbb{N}}$ perche' se sommiamo 2 successioni il limite della somma sara' lo stesso.
+		      Se moltiplichiamo uno scalare per una successione il limite e' ancora lo stesso
+	      \end{flushleft}
+	\item $Inf(\mathbb{R}^{\mathbb{N}}) =\{ \{ a \}_n \in \mathbb{R}^{\mathbb{N}} | \exists \text{ lim $a_n$ = 0 } \}$
+	      \begin{flushleft}
+		      e' sottospazio vettoriale di $Conv(\mathbb{R}^{\mathbb{N}})$
+	      \end{flushleft}
+\end{enumerate}
+\begin{flushleft}
+	Def: $\forall$ spazio vettoriale , $\forall v,...,v_n \in V$ sia
+\end{flushleft}
+\begin{equation*}
+	\sigma_{v_1,...,v_n}: K^n \to V \quad \text{ data da}
 \end{equation*}
 \begin{equation*}
-	K*W \subseteq W \quad \text{ cioe' } \quad k*v \in W \quad \forall k \in \mathbb{K}, \forall w\in W
+	\sigma_{v_1,...,v_n} (K_1,...,K_n) = \sum^n_{i=1} k_i v_i \quad (\in V)
 \end{equation*}
+\begin{flushleft}
+	questo si dice combinazione lineare di $v_1,...,v_n$ con coefficenti $K_1,...,K_n$
+\end{flushleft}
+\begin{equation*}
+	\text{span}(v_1,...,v_n)=\text{Immagine}(\sigma_{v_1,...,v_n}) = \text{sottospazio generato da }(v_1,...,v_n)
+\end{equation*}
+\textbf{Lemma}
+\begin{flushleft}
+	Span($v_1,...,v_n$) e' un sottospazio vettoriale di V
+\end{flushleft}
+
+
 
 \end{document}
 
