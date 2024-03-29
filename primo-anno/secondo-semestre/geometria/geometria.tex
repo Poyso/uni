@@ -373,8 +373,71 @@ quindi possiamo dedurre questo
 	      \begin{equation*}
 		      1*v_i+(-c)v_j=0
 	      \end{equation*}
-
+	\item $\rightarrow$ $\exists (\alpha_1,\alpha_2) \in K^2: \alpha_1 \neq 0 \lor \alpha_2 \neq 0$
+	      \begin{equation*}
+		      v_1=(-\alpha_1^{-1}\alpha_j)v_j
+	      \end{equation*}
 \end{itemize}
+\subsubsection*{Proposizione}
+\begin{flushleft}
+	$v_1,...,v_n$ sono linearmente dipendenti $\iff$ $\exists i \in \{1,...,n\}:v_1 \in Span(...,v_{i-1},v_{i+1},...)$
+\end{flushleft}
+\begin{flushleft}
+	nel sottospazio non ce $v_i$
+\end{flushleft}
+\subsubsection*{Dimostrazione}
+\begin{itemize}
+	\item $\leftarrow$ Sia $v_i = \sum_{j=1}^n \beta_j v_j$ tale che $i \neq j$
+	      \begin{equation*}
+		      (-\beta_1)v_1+...+(-\beta_{i-1})v_{i-1}+1*v_i+(-\beta_{i+1})v_{i+1}+...=0 \to
+	      \end{equation*}
+	      \begin{equation*}
+		      \to \exists (\alpha_{1},...,\alpha_{i-1},1,\alpha_{i+1},...) \in \mathbb{K}^n / \{\underbar{0} \}
+	      \end{equation*}
+	\item $\rightarrow$ Sia $\sum_{j=1}^n \alpha_j v_j = 0$ con $\underbar{$\alpha$} \neq \underbar{0}$ : $\exists i\in \{1,...,n\}:\alpha_i \neq 0$
+	      \begin{equation*}
+		      \to \alpha_i v_i = \sum_{j=1}^n (-\alpha_j)v_j \to v_i = \sum_{j=1}^n (-\alpha^{-1}_i \alpha_j)v_j\in Span(v_j:j\neq i)
+	      \end{equation*}
+\end{itemize}
+N.B
+\begin{flushleft}
+	La proposizione per n=3  ci da $v_1,v_2,v_3$ sono: se e solo se
+\end{flushleft}
+\begin{itemize}
+	\item linearmente indipendnenti
+	\item $\exists i : v_i $ sta nel sottospazio generato da $v_1,..,v_k$
+	\item $v_1,v_2,v_3$ sono complanari
+\end{itemize}
+Proposizione:
+\begin{flushleft}
+	$\sigma_{v_1,...,v_n}$ e' inniettiva $\iff$ $v_1,...,v_r$ sono linearmente indipendenti
+\end{flushleft}
+\subsubsection*{Dimostrazione}
+\begin{flushleft}
+	Inserire immagine
+\end{flushleft}
+\begin{flushleft}
+	Def: Sia V uno spazio vettoriale. Un insieme $B = \{ v_1,...,v_n \}$ di vettori in V e' una base di V se:
+\end{flushleft}
+\begin{itemize}
+	\item V = Span($v_1,...,v_n$), cioe' $v_1,...,v_n$ sono un sistema di generatori di $V$
+	\item $v_1,...,v_n$ sono linearmente indipendenti
+\end{itemize}
+\begin{flushleft}
+	Def: Le componenti di $\underbar{$\alpha$} = \sigma_{v_1,...,v_n}(v)$ si dicono coordinate di v rispetto alla base scelta
+\end{flushleft}
+\begin{flushleft}
+	Nota: per $V=k[x] \nexists $ base (finita) di V infatti si ha
+\end{flushleft}
+\begin{equation*}
+	S=\sum_{i=1}^n \alpha_i P_i(x)
+\end{equation*}
+\begin{flushleft}
+	grado(S) $\leq$ max{grado($P_i(x)$)}
+\end{flushleft}
+
+
+
 
 \end{document}
 
