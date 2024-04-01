@@ -435,9 +435,92 @@ Proposizione:
 \begin{flushleft}
 	grado(S) $\leq$ max{grado($P_i(x)$)}
 \end{flushleft}
+\begin{flushleft}
+	Def: Sia $A \subseteq V$ e sia $B \subseteq A$ si dice che B e' un sottoinsieme massimale di vettori linearmente indipendenti di A se:
+\end{flushleft}
+\begin{enumerate}
+	\item I vettori di B sono linearmente indipendenti
+	\item B e' massimale tra tutti i sottoinsieme di A che soddisfano (1) cioe'
+\end{enumerate}
 
+\begin{flushleft}
+	cioe' $\forall a \in A /B$ i vettori di $B \cup \{ a\}$ sono linearmente indipendenti tale che
+\end{flushleft}
+\begin{equation*}
+	\exists v_{i_k},...,v_{i_k} \in B \quad
+	\exists \alpha_{i_k},...,\alpha_{i_k} \in K \text{ tale che }
+	v_{i_k}\alpha_{i_k},...,v_{i_k}\alpha_{i_k}+ \alpha A =0
+\end{equation*}
+con $\alpha \neq 0$ la formula sopra vuol dire che $\alpha \in Span(B)$
+\subsubsection*{Propos 1}
+\begin{flushleft}
+	$\forall B = \{v_1,...,v_n\} (\subseteq V)$
+\end{flushleft}
+\begin{flushleft}
+	B e' base di V $\iff $ B e' sottoinsieme massimale di vettori linearmente indipendenti in V (=A)
+\end{flushleft}
+\begin{flushleft}
+	massimale= non si possono aggiungere altri vettori senza rompere la indipendenza lineare
+\end{flushleft}
+\subsubsection*{Lemma 2}
+\begin{flushleft}
+	Hp: $B = \{ v_1,...,v_n \}$ $w_1,...,w_l$ generano V $\{w_1,...,w_l\} \subseteq Span(B)$
+\end{flushleft}
+\begin{flushleft}
+	Th: Span(B)=V cioe' B genera V
+\end{flushleft}
+\subsubsection*{Dimostrazione}
+\begin{flushleft}
+	Per la (1): $\forall v \in V, \exists \beta_1,...,\beta_l \in K$
+\end{flushleft}
+\begin{equation*}
+	v= \sum^l_{j=1}\beta_j w_j
+\end{equation*}
+\begin{flushleft}
+	Per la (2): $\forall j=1,...,l,\exists \alpha_i,j \in K:$
+\end{flushleft}
+\begin{equation*}
+	w_j = \sum_{i=1}^n \alpha_{ij}v_i
+\end{equation*}
+\begin{flushleft}
+	Quindi $\forall v \in V$ si ha
+\end{flushleft}
+\begin{equation*}
+	v = \sum_j \beta_j w_j= \sum^l_{j=1} \sum^n_{i=1} \alpha_{ij} v_i = \sum_{i=1}^n \gamma_i v_i
+\end{equation*}
+con
+\begin{equation*}
+	\gamma_i = \sum^l_{j=1} \alpha_i j_i, \quad \forall i=1,...,n
+\end{equation*}
+cosi $v \in Span(v_1,...,v_n)$
 
-
-
+\subsubsection*{Teorema 3}
+\begin{flushleft}
+	Hp: $A=\{v_1,...,v_k \} $ e' insieme di generatori $B (\subseteq A)$ e' detto sottoinsieme in A
+\end{flushleft}
+\begin{flushleft}
+	B e' base di V
+\end{flushleft}
+\subsubsection*{Dimostrazione}
+\begin{flushleft}
+	B soddisfa (i) per Hp,Th: B genera V
+\end{flushleft}
+\begin{flushleft}
+	se $w_i \in B \to w_i \in Span(B)$
+\end{flushleft}
+\begin{flushleft}
+	se $w_i \notin B \to B_{w_i} = B \cup \{ w_i \} \to B_{w_i}$ e' linearmente dipendente
+\end{flushleft}
+se $B=\{w_{j_1},...,w_{j_k} \} (K \leq l)$
+\begin{equation*}
+	\exists \alpha_1,...,\alpha_k, \alpha \in K: \alpha_1 w_{j_1}+...+\alpha_k w_{j_k}+\alpha w_{j_i} =0 \to w_i = \sum_{j=1}^k (-\alpha^{-1}\alpha_s)w_s
+\end{equation*}
+\begin{flushleft}
+	Infatti $w_i \in Span(B) \quad \forall i=1,...,l$ quindi Lemma 2 da Span(B)=V
+\end{flushleft}
+\subsubsection*{Teorema 4}
+\begin{flushleft}
+	Se in V esiste un insieme di geneeratori finito $G=\{ w_1,...,w_e \}$. Allora $\exists$ base (finita) di V in particolare $\exists \text{ basi } B : B\subseteq G$
+\end{flushleft}
 \end{document}
 
