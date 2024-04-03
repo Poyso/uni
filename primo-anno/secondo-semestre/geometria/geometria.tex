@@ -522,5 +522,79 @@ se $B=\{w_{j_1},...,w_{j_k} \} (K \leq l)$
 \begin{flushleft}
 	Se in V esiste un insieme di geneeratori finito $G=\{ w_1,...,w_e \}$. Allora $\exists$ base (finita) di V in particolare $\exists \text{ basi } B : B\subseteq G$
 \end{flushleft}
+\subsection*{Teorema di completamento/scambio}
+\begin{flushleft}
+	Hp:$B= \{ v_1,...,v_n \}$ e' base di V\\
+	$L= \{ w_1,...,w_p \}$ e' linearmente dipendente
+\end{flushleft}
+\begin{flushleft}
+	Th: $\exists i_1,...,i_{n-p}\in \{ 1,...,n \}$ tale che \\
+	$B'=\{ w_1,...,w_p,v_i,...,v_{i_{n-p}}$ e' base di V
+\end{flushleft}
+\subsubsection*{Dimostrazione: p=1 (BASE dell'induzione)}
+\begin{flushleft}
+	B e' base $\to$ Span(B)=$w_1 \in V \to w_1 \sum_{k=1}^n \alpha_k v_k $ (per certi $\alpha \in K$)
+\end{flushleft}
+\begin{flushleft}
+	siccome deve essere linearmente indipendente $\to w_1 \neq 0$
+\end{flushleft}
+\begin{equation*}
+	v_{k_0}= \alpha^{-1}_{k_0} w_i + \sum^n_{k=1 \land k \neq k_0} ( \alpha^{-1}\alpha_k)v_k \to v_{k_0} \in Span(\{w_1,v_1,...,v_n \})\to \text{ $v_{k_0}$ sostituito con $w_1$}
+\end{equation*}
+inoltre
+\begin{equation*}
+	\{w_1 \} \cup \{ v_i \}
+\end{equation*}
+\begin{flushleft}
+	e' linearmente indipendente, inmfatti si ha
+\end{flushleft}
+\begin{equation*}
+	\beta' w_1 + \sum_{k=1}^n \beta_k v_k = 0_v : k \neq k_0
+\end{equation*}
+\begin{itemize}
+	\item se $\beta' = 0_v \to \sum^n_{k=1}\beta_k v_k = 0 \to \beta_k=0_k \quad \forall k \neq k_0$
+	\item se $\beta_k' \neq 0_k $
+	      \begin{equation*}
+		      w_1 = \sum_{k=1}^n (\beta_1^1 \beta_k) v_k \in Span(\{v_k\}_{k \neq k_0})
+	      \end{equation*}
+\end{itemize}
+\begin{itemize}
+	\item Hp induttiva: ho scambiato $w_1,...,w_l$ con l vettori tra i $v_1,...,v_n$ cioe'
+	      $\exists i_1,...,i_{n-l} \in \{1,...,n \}$ tale che $\{w_1,...,w_l,v_i,...,v_{i_{n-l}} \}$ e' base
+	\item Th: induttiva: scambiare $w_{l+1}$ con uno dei $v_{i_1},...,v_{i_{n-l}}$ $B_l$ e' base $\to$ $w_{l+1} \in Span(B_l)$ quindi
+\end{itemize}
+\begin{equation*}
+	w_{l+1} = \sum_{j=1}^l B_j w_j + \sum_{k=1}^{n-l} \alpha_k v_k
+\end{equation*}
+\begin{flushleft}
+	e per Hp su L, so che $k_0 \neq 0$
+\end{flushleft}
+\subsection*{Corollario 1:}
+\begin{flushleft}
+	Hp: $B' = \{ v_1',...,v_n' \},B'' = \{ v_1'',...,v_n'' \}$ sono basi
+\end{flushleft}
+\begin{flushleft}
+	Th: h=k
+\end{flushleft}
+\subsubsection*{Dimostrazione per assurdo}
+Sia $v_k : h\neq k, h<k \lor h>k$
+\begin{flushleft}
+	Sia $h<k$ Applico il teorema di completamento
+\end{flushleft}
+\begin{flushleft}
+	Allora $\exists i,...,i_{k-h}$ tale che $B_o = \{ v_1',...,v_h',v_{i_1}'',...,v_{i_{k-h}}$
+\end{flushleft}
+\begin{flushleft}
+	Ma $B' \subset B_o$ e B' e' base
+\end{flushleft}
+\begin{flushleft}
+	Def: se $\exists$ base finita di V, allora ogni base di V ha lo stesso numero si dice dimensione di V (su K) e si scrive $dim_k(V)$
+\end{flushleft}
+Esempi
+\begin{enumerate}
+	\item $dim_{\mathbb{C}}(\mathbb{C})=1$
+	\item $dim_{\mathbb{R}}(\mathbb{C})=2$
+	\item $dim_k(k[x]_{\leq n})=n+1$
+\end{enumerate}
 \end{document}
 
