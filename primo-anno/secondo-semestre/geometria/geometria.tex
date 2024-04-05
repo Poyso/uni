@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{inputenc}
 \usepackage{graphicx}
+\usepackage{systeme}
 \title{Geometria e Algebra}
 \begin{document}
 \section{Geometria affine (richiami)}
@@ -620,5 +621,123 @@ da mettere screen o qulcosa altro
 \end{itemize}
 \subsubsection*{Dimostrazione}
 Inserire screen
+
+\section{Sistemi lineari (Capitolo 3 sul libro)}
+\begin{equation*}
+  (*)=
+  \begin{cases}
+    \sum_{j=1}^n a_{ij} x_j = b_i \\
+    \forall i=1,...,l
+  \end{cases}
+\end{equation*}
+\begin{equation*}
+  A := (a_{ij})^{h=1,...,n}_{i=1,...,l} \in M_{l*n}(K):=\{ \text{ matrice l*n a coefficiente in K } \}
+\end{equation*}
+\begin{equation*}
+  \underbar{b}:=(b_1,...,b_l)\in K^l \text{ Le tratteremo in verticale perche e' piu comodo da lavorarci con una matrice}
+\end{equation*}
+\begin{equation*}
+  x:=(x_1,...,x_n)
+\end{equation*}
+Formula compatta per scrivere il sistema
+\begin{equation*}
+  A*\underbar{x}=\underbar{b}
+\end{equation*}
+\begin{equation*}
+  (A|\underbar{b})=\text{ matrice del sistema $(*)$ } = (A^1 | A^2| ... | A^n| \underbar{b})
+\end{equation*}
+\begin{flushleft}
+  Def: A si dice quadrata (e (*) si dice quadrato) se l=n
+\end{flushleft}
+\begin{flushleft}
+  Def: A e $(*)$ si dicono triangolari se
+\end{flushleft}
+\begin{itemize}
+  \item Superiori$\to$ $a_{ij}=0, \forall i>j \land l=n$
+  \item Inferiori$\to$ $a_{ij}=0, \forall i<j \land l=n$
+\end{itemize}
+Esempi:
+\begin{enumerate}
+  \item \begin{equation*}
+      (*)=
+      \begin{cases}
+        2x_1=4 \\ 
+        x_1-x_2=1 \\ 
+        2x_1+x_2+3x_3=-2
+      \end{cases} \to 
+      \begin{pmatrix}
+        2 & 0 & 0 & | & 4\\
+        1 &  -1& 0 & | & 1\\
+        2 &  1& 3 & | & -2
+      \end{pmatrix}\leftarrow \text{ matrice triangolare inferiore }
+  \end{equation*}
+  \begin{flushleft}
+    Se risolviamo il sistema partendo dalla equazione con meno incognite troveremo un unica soluzione per questo sistema
+  \end{flushleft}
+\item \begin{equation*}
+    (*)=\systeme{
+      3x_1-2x_2+x_3-x_4=1,
+      2x_3+x_4=1,
+      -x_3+5x_4=0,
+      2x_4=3
+    }\to\begin{pmatrix}
+      1 & 2 & 1& -1& |& 1 \\
+      0 & 0 & 2& 1& |& 1 \\
+      0 & 0 & -1& 5& |& 0 \\
+      0 & 0 & 0& 2& |& 3
+    \end{pmatrix}\leftarrow \text{ matrice triangolare superiore }
+\end{equation*}
+\begin{flushleft}
+  Se provassimo a risolvere questo sistema ci accorgeremo che in $\mathbb{Q}$ non esistono soluzoni
+  ,ma se invece lo risolviamo in $\mathbb{Z}_5$ ci accorgeremo che per qualsiasi valore dato a $x_2$ il sistema si risolve 
+  questo succede perche' se notiamo ce uno zero che fa parte nel nostro triangolo superiore.
+\end{flushleft}
+\end{enumerate}
+\subsubsection{Proposizione}
+\begin{flushleft}
+  Hp: $(*):A\underbar{x}=\underbar{b}$ sistema lineare triangolare
+\end{flushleft}
+\begin{flushleft}
+  Th: $\exists !$ soluzioni di $(*)$ $\iff$ $a_{1,1} \neq 0, a_{2,2} \neq 0,...,a_{n,n} \neq 0$
+\end{flushleft}
+\begin{flushleft}
+  Def: $\forall$ sistema lineare (l*n) $(*):A \underbar{x}=\underbar{b}$ si pone
+\end{flushleft}
+\begin{equation*}
+  S_*=\{\underbar{$\alpha$} \in K^n | \underbar{$\alpha$} \text{ e' soluzione di $(*)$ } \}
+\end{equation*}
+\begin{flushleft}
+  2 sistemi $(*)$ e $(*)'$ della stessa forma si dicono equivalenti se
+\end{flushleft}
+\begin{equation*}
+  S_*=S_{*'}
+\end{equation*}
+\subsection{Operazioni elementari}
+\begin{flushleft}
+  Def: sia $(*):A\underbar{x}=\underbar{b}$ un sistema lineare
+\end{flushleft}
+\begin{flushleft}
+  $\forall h,k\in K$, con $k \neq 0_k$, e $s,t \in \{1,...,l \}$ si dice che $\omega^{h,k}_{s,t}$ 
+  la trasformazione (elementare)che sostituisce a $(*)$ il sistema $\tilde{(*)}:\tilde{A} \underbar{x}=\tilde{\underbar{b}}$
+  con $(\tilde{A}|\tilde{\underbar{b}})$ che a righe date:
+\end{flushleft}
+\begin{equation*}
+   (\tilde{A_2}|\tilde{\underbar{$b_2$}}):=(A_2|\underbar{$b_2$})
+\end{equation*}
+\begin{equation*}
+  (\tilde{A_t}|\tilde{b_t}):=(hA_s+kA_t|hb_s+kb_t)\to
+\end{equation*}
+\begin{equation*}
+  \sum^n_{j=1} \tilde{a_{t,g}}x_j=\tilde{b_j} \quad h\sum a_{ij}x_j+k\sum a_{tj}x_j=hb_j+kb_t
+\end{equation*}
+\begin{flushleft}
+  Nota: l'operazione $\omega^{h,k}_{s,t}$ e' invertibile
+\end{flushleft}
+\begin{equation*}
+  con(\omega^{h,k}_{s,t})^{-1}=\omega^{-hk^{-1},k^{-1}}_{s,t}
+\end{equation*}
+\begin{flushleft}
+  cioe' se usiamo la funzione e omega e la riutilizziamo ritorniamo al sistema iniziale
+\end{flushleft}
 \end{document}
 
