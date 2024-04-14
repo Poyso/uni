@@ -739,5 +739,105 @@ Esempi:
 \begin{flushleft}
   cioe' se usiamo la funzione e omega e la riutilizziamo ritorniamo al sistema iniziale
 \end{flushleft}
+\subsection{Il metodo di eliminazione di Gauss}
+\begin{flushleft}
+  Questo metodo funziona e serve a trasformare un un sistema lineare quadrato in un sistema triangolare
+  superiore o inferiore. Come funziona?
+\end{flushleft}
+\begin{flushleft}
+  In questo metodo dobbiamo definire un pivot che e il valore che appartiene
+  alla diagonale della matrice quadrata e poi sommiamo all equazione sotto al pivot
+  l equazione superiore a questa moltiplicata per $-a_{j1}/ pivot$ questo ripeterlo finche non otterremo un sistema triangolare superiore/inferiore
+  Si puo' anche invertire l equazione tra loro se necessario
+\end{flushleft}
+\subsubsection{Teorema}
+\begin{flushleft}
+  Un sistema lineare quadrato ammette una sola unica soluzione se tutti i pivot sono valori non nulli
+\end{flushleft}
+\begin{flushleft}
+  Def: una matrice quadrata si dice non singolare se tutti i pivot sono non nulli; e' detta singolare altrimenti
+\end{flushleft}
+\subsection{Funzioni/applicazioni trasformazione lineari}
+\begin{flushleft}
+  Def: $\forall sp.vettoriale$ V e W (su K) una funzione $f: V \to W$ si dice lineare se:
+\end{flushleft}
+\begin{itemize}
+  \item $f(v'+v'')=f(v')+f(v'')$ $\forall v',v'' \in V$
+  \item $f(\alpha v)=\alpha f(v)$ $\forall \alpha \in K, \forall v \in V$
+\end{itemize}
+\begin{equation*}
+  Hom_k(V,W):=\{ f:V \to W \} | \text{ f e' lineare } \}
+\end{equation*}
+\begin{flushleft}
+  questo si chiama lineare o (omo)morfismi
+\end{flushleft}
+Esempi:
+\begin{flushleft}
+  \begin{enumerate}
+    \item $V \to V$ $v \to v$ identita' e' sempre lineare
+    \item $V \to W, v\to 0(v):= 0_w$ e' lineare
+  \end{enumerate}
+\end{flushleft}
+Controesempi:
+\begin{flushleft}
+\item $V=W=\mathbb{R}$
+  \begin{equation*}
+    f:V \to V, x\to 5x^2-x+3 \text{ non e' lineare }
+  \end{equation*}
+\end{flushleft}
+Lemma:
+\begin{flushleft}
+  Se $f: V \to W$ e' isomorfismo, la funzione inversa e' anche lineare
+\end{flushleft}
+Proposizione:
+\begin{flushleft}
+  Hp: V,W spazi vettoriali $B = \{b_1,...,b_n \}$ e' base di V e $w_1,...,w_n \in W$
+\end{flushleft}
+\begin{flushleft}
+  Th: $\exists ! f: V \to W$ lineare tale che 
+\end{flushleft}
+\begin{equation*}
+  f(b_i)=w_i \quad \forall i=1,...,n
+\end{equation*}
+tale f e' data
+\begin{equation*}
+  f(v)= \sum^n_{i=1} \alpha_i w_i \text{ con $(\alpha_1,...,\alpha_n) \in K^n$ }
+\end{equation*}
+e' l'unica stringa tale che
+\begin{equation*}
+  v= \sum^n_{i=1} \alpha_i b_i
+\end{equation*}
+Corollario
+\begin{flushleft}
+ Se due funzioni lineari $f_1,f_2: V \to W$ coincidono su una base di V, allora $f_1=f_2$ 
+\end{flushleft}
+Lemma
+\begin{flushleft}
+  Se $V \to^h W$ e $W \to^k U$ sono funzioni lineari allora $V \to^{h*k} U$ e' lineare
+\end{flushleft}
+\begin{flushleft}
+  Def: $\forall l,n \in \mathbb{N}^+, \forall A \in Mat_{l*n}(K)$
+\end{flushleft}
+\begin{flushleft}
+  $L_A := K^n \to K^l$ e' la funzione detta da 
+\end{flushleft}
+\begin{equation*}
+  \underline{x}=(x_1,...,x_n) \to^{L_A} L_A(\underline{x})= A\underline{x}=\begin{pmatrix}
+    \sum^n_j a_{1j}x_j \\
+    ... \\
+    \sum^n_j a_{lj}x_j \\
+  \end{pmatrix}
+\end{equation*}
+Lemma:
+\begin{flushleft}
+  $L_A$ e' lineare
+\end{flushleft}
+Corollario
+\begin{flushleft}
+  $\forall A,C \in Mat_{lxn}(K)$ sia 
+\end{flushleft}
+\begin{equation*}
+  L_A=L_C \iff A=C
+\end{equation*}
 \end{document}
 
