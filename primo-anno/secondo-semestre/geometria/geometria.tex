@@ -931,6 +931,100 @@ per tutti gli $\alpha_1,..,\alpha_n \in \mathbb{R}$
 	Supponiamo che si abbia $S(v_j)=T(v_j)$ per j=1,...,n. Allora $S \cong T$, cioe' $S(v)=T(v)$ per tutti i vettori $v \in V$
 \end{flushleft}
 \subsection{Proposizione}
-Siano $A,B \in M_{m,n}$ due matrici. Allora $L_A \cong L_B$ se e solo se $A=B$.
+Siano $A,B \in M_{m,n}$ due matrici. Allora $L_A \equiv L_B$ se e solo se $A=B$.
+\subsection{Nucleo e immagine}
+\begin{flushleft}
+	A ogni applicazione lineare $T:V \to W$ possiamo associare due sottoinsiemi:
+\end{flushleft}
+\begin{enumerate}
+	\item il nucleo Ker$T=\{ v \in V | T(v)=O\} \subseteq V$
+	\item l'immagine Im$T=T(V)-\{T(v)|v\in V\} \subseteq W$
+\end{enumerate}
+Il nucleo e l immagine oltre ad essere sottoinsiemi vettoriali caraterizzano l'inniettivita'
+e la surgettivita' delle applicazioni lineari
+\subsubsection{Proposizione}
+Sia $T:V \to W$ un'applicazione lineare. Allora:
+\begin{enumerate}
+	\item Ker$T$ e' un sottospazio di V
+	\item Im$T$ e' un sottospazio di W
+	\item T e' surgettiva se e solo se Im$T=W$
+	\item T e' inniettiva se e solo se Ker$T= \{ O \}$
+\end{enumerate}
+\subsubsection{Lemma}
+\begin{flushleft}
+	Sia $T: V\to W$ un' applicazione lineare, e $\{ v_1,...,v_n \}$ una base di V, allora
+\end{flushleft}
+\begin{equation*}
+	ImT=Span(T(v_1),...,T(v_n))
+\end{equation*}
+\subsubsection{Definizione}
+\begin{flushleft}
+	Il rango rgT di un applicazione lineare $T:V \to W$ e' la dimensione dell immagine
+\end{flushleft}
+\subsubsection{Teorema della dimensione}
+\begin{flushleft}
+	Sia: $T:V \to W$ un'applicazione lineare. Allora
+\end{flushleft}
+\begin{equation*}
+	dim(V)=dim(Ker(T))+rg(T)
+\end{equation*}
+\subsubsection{Corollario}
+Sia $T: V\to W$ un'applicazione lineare allora:
+\begin{enumerate}
+	\item T e' inniettiva se e solo se rg(T)=dim(V)
+	\item T e' surgettiva' se e solo se rg(T)=dim(W)
+	\item se dim(V)=dim(W) (in particolare, se V=W), T e' iniettiva se e solo se e' surgettiva
+\end{enumerate}
+\subsubsection{Corollario (Rouche-Capelli)}
+\begin{flushleft}
+	Sia Ax=b un sistema lineare con m equazioni in n incognite, e sia A' la matrice completa del sistema
+	. Allora il sistema amette soluzioni solo se rg(A')=rg(A). Inoltre la soluzione, se esiste, e' unica se e solo se rg(A)=n
+\end{flushleft}
+\section{Matrici e applicazioni lineari}
+\subsection{Composizioni e isomorfismi}
+\subsubsection{Definizione}
+\begin{flushleft}
+	Siano V e W due spazi vettoriali, $S,T: V \to W$ due applicazioni lineari e $\lambda \in \mathbb{R}$.
+	Definiamo le applicazioni $S+T:V\to W$ e $\lambda T: V\to W$ ponendo
+\end{flushleft}
+\begin{equation*}
+	(S+T)(v)=S(v)+T(v) \quad \text{e} \quad (\lambda T)(v)=\lambda (T(v))
+\end{equation*}
+\subsubsection{Definizione}
+\begin{flushleft}
+	Siano $S:U \to V$ e $T:V \to W$ due applicazioni lineari: allora la composizione di S e T
+	e' l'applicazione $T \circ S:U \to W$ data da
+\end{flushleft}
+\begin{equation*}
+	\forall u \in U \quad \text{e} \quad (T \circ S)(u)=T(S(u))
+\end{equation*}
+\subsubsection{Proposizione}
+\begin{flushleft}
+	Siano $S:U \to V$ e $T:V\to W$ applicazioni lineari fra gli spazi vettoriali U,V e W. Allora la composizione $T \circ S:U \to W$ e' lineare
+\end{flushleft}
+\subsubsection{Definizione}
+\begin{flushleft}
+	Diremo che un applicazione lineare $T:V \to W$ e' invertibile se esiste un'applicazione lineare
+	$S:W \to V$, l'inversa di T, tale che $T\circ S=id_w$ e $S \circ T= id_v$. L'inversa di T,se esiste, si indica con $T^{-1}$
+\end{flushleft}
+\begin{flushleft}
+	Se l'inversa esiste e' unica
+\end{flushleft}
+\subsubsection{Proposizione}
+\begin{flushleft}
+	Sia $T:V \to W$ un'applicazione lineare. Allora T e' invertibile se e solo se e' inniettiva e surgettiva
+\end{flushleft}
+\subsubsection{Corollario}
+\begin{flushleft}
+	Sia $T:V \to W$ un applicazione lineare. Supponiamo che si abbia dim(V)=dim(W). Allora T e' invertibile se e solo se e' inniettiva se e solo se e' surgettiva
+\end{flushleft}
+\subsubsection{Definizione}
+\begin{flushleft}
+	Due spazi vettoriali V e W sono isomorfi ( e si scrive V $\cong$ W) se esiste un'isomorfismo fra V e W
+	,cioe' un'applicazione lineare invertibile $T:V \to W$
+\end{flushleft}
+\subsubsection{Proposizione}
+\begin{flushleft}
+	Per ogni $n,m \in \mathbb{N}$ lo spazio $L(\mathbb{R}^n\mathbb{R}^n)$ e' isomorfo allo spazio delle matrici $M_{m,n}(\mathbb{R})$.In paritcolare, lo spazio duale ($\mathbb{R}^n$) e' isomorfo allo spazio dei vettori riga $M_{1,n}(\mathbb{R})$
+\end{flushleft}
 \end{document}
-

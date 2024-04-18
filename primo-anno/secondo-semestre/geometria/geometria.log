@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=latex 2024.4.18)  18 APR 2024 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=latex 2024.4.18)  18 APR 2024 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -220,7 +220,13 @@ Overfull \hbox (107.19987pt too wide) detected at line 689
 []   []
  []
 
-[13] [14] [15] [16] [17] (./geometria.aux)
+[13] [14] [15] [16] [17]
+Overfull \hbox (25.08397pt too wide) in paragraph at lines 943--945
+\OT1/cmr/m/n/10 Il nu-cleo e l im-mag-ine oltre ad es-sere sot-toin-siemi vet-t
+o-ri-ali cara-ter-iz-zano l'inniettivita'
+ []
+
+[18] [19] (./geometria.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -235,4 +241,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  57i,14n,65p,277b,305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on geometria.dvi (17 pages, 47332 bytes).
+Output written on geometria.dvi (19 pages, 50972 bytes).
