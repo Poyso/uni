@@ -599,245 +599,338 @@ Esempi
 \end{enumerate}
 \subsection*{Corollario 2:}
 \begin{flushleft}
-  Hp: $dim_k(V)=n$
+	Hp: $dim_k(V)=n$
 \end{flushleft}
 Th:
 \begin{itemize}
-  \item $w_1,...,w_t$ linearmente inidipendenti allora $t \leq n$
-  \item $u_1,...,u_p$ con $p>n$ sono linearmente dipendenti
-  \item $w_1,...,w_n$ linearmente indipendenti allora $\{w_1,...,w_n \}$ e' base
-  \item $w_1,...,w_n$ generano V allora $\{w_1,...,w_n \}$ e' base 
+	\item $w_1,...,w_t$ linearmente inidipendenti allora $t \leq n$
+	\item $u_1,...,u_p$ con $p>n$ sono linearmente dipendenti
+	\item $w_1,...,w_n$ linearmente indipendenti allora $\{w_1,...,w_n \}$ e' base
+	\item $w_1,...,w_n$ generano V allora $\{w_1,...,w_n \}$ e' base
 \end{itemize}
 \subsubsection*{Dimostrazione}
 da mettere screen o qulcosa altro
 
 \subsection*{Proposizioni}
 \begin{flushleft}
-  Hp: $dim(V)=n$ $W \leq V$
+	Hp: $dim(V)=n$ $W \leq V$
 \end{flushleft}
 \begin{itemize}
-  \item $ \exists dim(W) \land dim(W)\leq dim(V)$
-  \item $dim(W)=dim(V) \iff W=V$
+	\item $ \exists dim(W) \land dim(W)\leq dim(V)$
+	\item $dim(W)=dim(V) \iff W=V$
 \end{itemize}
 \subsubsection*{Dimostrazione}
 Inserire screen
 
 \section{Sistemi lineari (Capitolo 3 sul libro)}
 \begin{equation*}
-  (*)=
-  \begin{cases}
-    \sum_{j=1}^n a_{ij} x_j = b_i \\
-    \forall i=1,...,l
-  \end{cases}
+	(*)=
+	\begin{cases}
+		\sum_{j=1}^n a_{ij} x_j = b_i \\
+		\forall i=1,...,l
+	\end{cases}
 \end{equation*}
 \begin{equation*}
-  A := (a_{ij})^{h=1,...,n}_{i=1,...,l} \in M_{l*n}(K):=\{ \text{ matrice l*n a coefficiente in K } \}
+	A := (a_{ij})^{h=1,...,n}_{i=1,...,l} \in M_{l*n}(K):=\{ \text{ matrice l*n a coefficiente in K } \}
 \end{equation*}
 \begin{equation*}
-  \underbar{b}:=(b_1,...,b_l)\in K^l \text{ Le tratteremo in verticale perche e' piu comodo da lavorarci con una matrice}
+	\underbar{b}:=(b_1,...,b_l)\in K^l \text{ Le tratteremo in verticale perche e' piu comodo da lavorarci con una matrice}
 \end{equation*}
 \begin{equation*}
-  x:=(x_1,...,x_n)
+	x:=(x_1,...,x_n)
 \end{equation*}
 Formula compatta per scrivere il sistema
 \begin{equation*}
-  A*\underbar{x}=\underbar{b}
+	A*\underbar{x}=\underbar{b}
 \end{equation*}
 \begin{equation*}
-  (A|\underbar{b})=\text{ matrice del sistema $(*)$ } = (A^1 | A^2| ... | A^n| \underbar{b})
+	(A|\underbar{b})=\text{ matrice del sistema $(*)$ } = (A^1 | A^2| ... | A^n| \underbar{b})
 \end{equation*}
 \begin{flushleft}
-  Def: A si dice quadrata (e (*) si dice quadrato) se l=n
+	Def: A si dice quadrata (e (*) si dice quadrato) se l=n
 \end{flushleft}
 \begin{flushleft}
-  Def: A e $(*)$ si dicono triangolari se
+	Def: A e $(*)$ si dicono triangolari se
 \end{flushleft}
 \begin{itemize}
-  \item Superiori$\to$ $a_{ij}=0, \forall i>j \land l=n$
-  \item Inferiori$\to$ $a_{ij}=0, \forall i<j \land l=n$
+	\item Superiori$\to$ $a_{ij}=0, \forall i>j \land l=n$
+	\item Inferiori$\to$ $a_{ij}=0, \forall i<j \land l=n$
 \end{itemize}
 Esempi:
 \begin{enumerate}
-  \item \begin{equation*}
-      (*)=
-      \begin{cases}
-        2x_1=4 \\ 
-        x_1-x_2=1 \\ 
-        2x_1+x_2+3x_3=-2
-      \end{cases} \to 
-      \begin{pmatrix}
-        2 & 0 & 0 & | & 4\\
-        1 &  -1& 0 & | & 1\\
-        2 &  1& 3 & | & -2
-      \end{pmatrix}\leftarrow \text{ matrice triangolare inferiore }
-  \end{equation*}
-  \begin{flushleft}
-    Se risolviamo il sistema partendo dalla equazione con meno incognite troveremo un unica soluzione per questo sistema
-  \end{flushleft}
-\item \begin{equation*}
-    (*)=\systeme{
-      3x_1-2x_2+x_3-x_4=1,
-      2x_3+x_4=1,
-      -x_3+5x_4=0,
-      2x_4=3
-    }\to\begin{pmatrix}
-      1 & 2 & 1& -1& |& 1 \\
-      0 & 0 & 2& 1& |& 1 \\
-      0 & 0 & -1& 5& |& 0 \\
-      0 & 0 & 0& 2& |& 3
-    \end{pmatrix}\leftarrow \text{ matrice triangolare superiore }
-\end{equation*}
-\begin{flushleft}
-  Se provassimo a risolvere questo sistema ci accorgeremo che in $\mathbb{Q}$ non esistono soluzoni
-  ,ma se invece lo risolviamo in $\mathbb{Z}_5$ ci accorgeremo che per qualsiasi valore dato a $x_2$ il sistema si risolve 
-  questo succede perche' se notiamo ce uno zero che fa parte nel nostro triangolo superiore.
-\end{flushleft}
+	\item \begin{equation*}
+		      (*)=
+		      \begin{cases}
+			      2x_1=4    \\
+			      x_1-x_2=1 \\
+			      2x_1+x_2+3x_3=-2
+		      \end{cases} \to
+		      \begin{pmatrix}
+			      2 & 0  & 0 & | & 4  \\
+			      1 & -1 & 0 & | & 1  \\
+			      2 & 1  & 3 & | & -2
+		      \end{pmatrix}\leftarrow \text{ matrice triangolare inferiore }
+	      \end{equation*}
+	      \begin{flushleft}
+		      Se risolviamo il sistema partendo dalla equazione con meno incognite troveremo un unica soluzione per questo sistema
+	      \end{flushleft}
+	\item \begin{equation*}
+		      (*)=\systeme{
+			      3x_1-2x_2+x_3-x_4=1,
+			      2x_3+x_4=1,
+			      -x_3+5x_4=0,
+			      2x_4=3
+		      }\to\begin{pmatrix}
+			      1 & 2 & 1  & -1 & | & 1 \\
+			      0 & 0 & 2  & 1  & | & 1 \\
+			      0 & 0 & -1 & 5  & | & 0 \\
+			      0 & 0 & 0  & 2  & | & 3
+		      \end{pmatrix}\leftarrow \text{ matrice triangolare superiore }
+	      \end{equation*}
+	      \begin{flushleft}
+		      Se provassimo a risolvere questo sistema ci accorgeremo che in $\mathbb{Q}$ non esistono soluzoni
+		      ,ma se invece lo risolviamo in $\mathbb{Z}_5$ ci accorgeremo che per qualsiasi valore dato a $x_2$ il sistema si risolve
+		      questo succede perche' se notiamo ce uno zero che fa parte nel nostro triangolo superiore.
+	      \end{flushleft}
 \end{enumerate}
 \subsubsection{Proposizione}
 \begin{flushleft}
-  Hp: $(*):A\underbar{x}=\underbar{b}$ sistema lineare triangolare
+	Hp: $(*):A\underbar{x}=\underbar{b}$ sistema lineare triangolare
 \end{flushleft}
 \begin{flushleft}
-  Th: $\exists !$ soluzioni di $(*)$ $\iff$ $a_{1,1} \neq 0, a_{2,2} \neq 0,...,a_{n,n} \neq 0$
+	Th: $\exists !$ soluzioni di $(*)$ $\iff$ $a_{1,1} \neq 0, a_{2,2} \neq 0,...,a_{n,n} \neq 0$
 \end{flushleft}
 \begin{flushleft}
-  Def: $\forall$ sistema lineare (l*n) $(*):A \underbar{x}=\underbar{b}$ si pone
+	Def: $\forall$ sistema lineare (l*n) $(*):A \underbar{x}=\underbar{b}$ si pone
 \end{flushleft}
 \begin{equation*}
-  S_*=\{\underbar{$\alpha$} \in K^n | \underbar{$\alpha$} \text{ e' soluzione di $(*)$ } \}
+	S_*=\{\underbar{$\alpha$} \in K^n | \underbar{$\alpha$} \text{ e' soluzione di $(*)$ } \}
 \end{equation*}
 \begin{flushleft}
-  2 sistemi $(*)$ e $(*)'$ della stessa forma si dicono equivalenti se
+	2 sistemi $(*)$ e $(*)'$ della stessa forma si dicono equivalenti se
 \end{flushleft}
 \begin{equation*}
-  S_*=S_{*'}
+	S_*=S_{*'}
 \end{equation*}
 \subsection{Operazioni elementari}
 \begin{flushleft}
-  Def: sia $(*):A\underbar{x}=\underbar{b}$ un sistema lineare
+	Def: sia $(*):A\underbar{x}=\underbar{b}$ un sistema lineare
 \end{flushleft}
 \begin{flushleft}
-  $\forall h,k\in K$, con $k \neq 0_k$, e $s,t \in \{1,...,l \}$ si dice che $\omega^{h,k}_{s,t}$ 
-  la trasformazione (elementare)che sostituisce a $(*)$ il sistema $\tilde{(*)}:\tilde{A} \underbar{x}=\tilde{\underbar{b}}$
-  con $(\tilde{A}|\tilde{\underbar{b}})$ che a righe date:
+	$\forall h,k\in K$, con $k \neq 0_k$, e $s,t \in \{1,...,l \}$ si dice che $\omega^{h,k}_{s,t}$
+	la trasformazione (elementare)che sostituisce a $(*)$ il sistema $\tilde{(*)}:\tilde{A} \underbar{x}=\tilde{\underbar{b}}$
+	con $(\tilde{A}|\tilde{\underbar{b}})$ che a righe date:
 \end{flushleft}
 \begin{equation*}
-   (\tilde{A_2}|\tilde{\underbar{$b_2$}}):=(A_2|\underbar{$b_2$})
+	(\tilde{A_2}|\tilde{\underbar{$b_2$}}):=(A_2|\underbar{$b_2$})
 \end{equation*}
 \begin{equation*}
-  (\tilde{A_t}|\tilde{b_t}):=(hA_s+kA_t|hb_s+kb_t)\to
+	(\tilde{A_t}|\tilde{b_t}):=(hA_s+kA_t|hb_s+kb_t)\to
 \end{equation*}
 \begin{equation*}
-  \sum^n_{j=1} \tilde{a_{t,g}}x_j=\tilde{b_j} \quad h\sum a_{ij}x_j+k\sum a_{tj}x_j=hb_j+kb_t
+	\sum^n_{j=1} \tilde{a_{t,g}}x_j=\tilde{b_j} \quad h\sum a_{ij}x_j+k\sum a_{tj}x_j=hb_j+kb_t
 \end{equation*}
 \begin{flushleft}
-  Nota: l'operazione $\omega^{h,k}_{s,t}$ e' invertibile
+	Nota: l'operazione $\omega^{h,k}_{s,t}$ e' invertibile
 \end{flushleft}
 \begin{equation*}
-  con(\omega^{h,k}_{s,t})^{-1}=\omega^{-hk^{-1},k^{-1}}_{s,t}
+	con(\omega^{h,k}_{s,t})^{-1}=\omega^{-hk^{-1},k^{-1}}_{s,t}
 \end{equation*}
 \begin{flushleft}
-  cioe' se usiamo la funzione e omega e la riutilizziamo ritorniamo al sistema iniziale
+	cioe' se usiamo la funzione e omega e la riutilizziamo ritorniamo al sistema iniziale
 \end{flushleft}
 \subsection{Il metodo di eliminazione di Gauss}
 \begin{flushleft}
-  Questo metodo funziona e serve a trasformare un un sistema lineare quadrato in un sistema triangolare
-  superiore o inferiore. Come funziona?
+	Questo metodo funziona e serve a trasformare un un sistema lineare quadrato in un sistema triangolare
+	superiore o inferiore. Come funziona?
 \end{flushleft}
 \begin{flushleft}
-  In questo metodo dobbiamo definire un pivot che e il valore che appartiene
-  alla diagonale della matrice quadrata e poi sommiamo all equazione sotto al pivot
-  l equazione superiore a questa moltiplicata per $-a_{j1}/ pivot$ questo ripeterlo finche non otterremo un sistema triangolare superiore/inferiore
-  Si puo' anche invertire l equazione tra loro se necessario
+	In questo metodo dobbiamo definire un pivot che e il valore che appartiene
+	alla diagonale della matrice quadrata e poi sommiamo all equazione sotto al pivot
+	l equazione superiore a questa moltiplicata per $-a_{j1}/ pivot$ questo ripeterlo finche non otterremo un sistema triangolare superiore/inferiore
+	Si puo' anche invertire l equazione tra loro se necessario
 \end{flushleft}
 \subsubsection{Teorema}
 \begin{flushleft}
-  Un sistema lineare quadrato ammette una sola unica soluzione se tutti i pivot sono valori non nulli
+	Un sistema lineare quadrato ammette una sola unica soluzione se tutti i pivot sono valori non nulli
 \end{flushleft}
 \begin{flushleft}
-  Def: una matrice quadrata si dice non singolare se tutti i pivot sono non nulli; e' detta singolare altrimenti
+	Def: una matrice quadrata si dice non singolare se tutti i pivot sono non nulli; e' detta singolare altrimenti
 \end{flushleft}
 \subsection{Funzioni/applicazioni trasformazione lineari}
 \begin{flushleft}
-  Def: $\forall sp.vettoriale$ V e W (su K) una funzione $f: V \to W$ si dice lineare se:
+	Def: $\forall sp.vettoriale$ V e W (su K) una funzione $f: V \to W$ si dice lineare se:
 \end{flushleft}
 \begin{itemize}
-  \item $f(v'+v'')=f(v')+f(v'')$ $\forall v',v'' \in V$
-  \item $f(\alpha v)=\alpha f(v)$ $\forall \alpha \in K, \forall v \in V$
+	\item $f(v'+v'')=f(v')+f(v'')$ $\forall v',v'' \in V$
+	\item $f(\alpha v)=\alpha f(v)$ $\forall \alpha \in K, \forall v \in V$
 \end{itemize}
 \begin{equation*}
-  Hom_k(V,W):=\{ f:V \to W \} | \text{ f e' lineare } \}
+	Hom_k(V,W):=\{ f:V \to W \} | \text{ f e' lineare } \}
 \end{equation*}
 \begin{flushleft}
-  questo si chiama lineare o (omo)morfismi
+	questo si chiama lineare o (omo)morfismi
 \end{flushleft}
 Esempi:
 \begin{flushleft}
-  \begin{enumerate}
-    \item $V \to V$ $v \to v$ identita' e' sempre lineare
-    \item $V \to W, v\to 0(v):= 0_w$ e' lineare
-  \end{enumerate}
+	\begin{enumerate}
+		\item $V \to V$ $v \to v$ identita' e' sempre lineare
+		\item $V \to W, v\to 0(v):= 0_w$ e' lineare
+	\end{enumerate}
 \end{flushleft}
 Controesempi:
 \begin{flushleft}
-\item $V=W=\mathbb{R}$
-  \begin{equation*}
-    f:V \to V, x\to 5x^2-x+3 \text{ non e' lineare }
-  \end{equation*}
+	\item $V=W=\mathbb{R}$
+	\begin{equation*}
+		f:V \to V, x\to 5x^2-x+3 \text{ non e' lineare }
+	\end{equation*}
 \end{flushleft}
 Lemma:
 \begin{flushleft}
-  Se $f: V \to W$ e' isomorfismo, la funzione inversa e' anche lineare
+	Se $f: V \to W$ e' isomorfismo, la funzione inversa e' anche lineare
 \end{flushleft}
 Proposizione:
 \begin{flushleft}
-  Hp: V,W spazi vettoriali $B = \{b_1,...,b_n \}$ e' base di V e $w_1,...,w_n \in W$
+	Hp: V,W spazi vettoriali $B = \{b_1,...,b_n \}$ e' base di V e $w_1,...,w_n \in W$
 \end{flushleft}
 \begin{flushleft}
-  Th: $\exists ! f: V \to W$ lineare tale che 
+	Th: $\exists ! f: V \to W$ lineare tale che
 \end{flushleft}
 \begin{equation*}
-  f(b_i)=w_i \quad \forall i=1,...,n
+	f(b_i)=w_i \quad \forall i=1,...,n
 \end{equation*}
 tale f e' data
 \begin{equation*}
-  f(v)= \sum^n_{i=1} \alpha_i w_i \text{ con $(\alpha_1,...,\alpha_n) \in K^n$ }
+	f(v)= \sum^n_{i=1} \alpha_i w_i \text{ con $(\alpha_1,...,\alpha_n) \in K^n$ }
 \end{equation*}
 e' l'unica stringa tale che
 \begin{equation*}
-  v= \sum^n_{i=1} \alpha_i b_i
+	v= \sum^n_{i=1} \alpha_i b_i
 \end{equation*}
 Corollario
 \begin{flushleft}
- Se due funzioni lineari $f_1,f_2: V \to W$ coincidono su una base di V, allora $f_1=f_2$ 
+	Se due funzioni lineari $f_1,f_2: V \to W$ coincidono su una base di V, allora $f_1=f_2$
 \end{flushleft}
 Lemma
 \begin{flushleft}
-  Se $V \to^h W$ e $W \to^k U$ sono funzioni lineari allora $V \to^{h*k} U$ e' lineare
+	Se $V \to^h W$ e $W \to^k U$ sono funzioni lineari allora $V \to^{h*k} U$ e' lineare
 \end{flushleft}
 \begin{flushleft}
-  Def: $\forall l,n \in \mathbb{N}^+, \forall A \in Mat_{l*n}(K)$
+	Def: $\forall l,n \in \mathbb{N}^+, \forall A \in Mat_{l*n}(K)$
 \end{flushleft}
 \begin{flushleft}
-  $L_A := K^n \to K^l$ e' la funzione detta da 
+	$L_A := K^n \to K^l$ e' la funzione detta da
 \end{flushleft}
 \begin{equation*}
-  \underline{x}=(x_1,...,x_n) \to^{L_A} L_A(\underline{x})= A\underline{x}=\begin{pmatrix}
-    \sum^n_j a_{1j}x_j \\
-    ... \\
-    \sum^n_j a_{lj}x_j \\
-  \end{pmatrix}
+	\underline{x}=(x_1,...,x_n) \to^{L_A} L_A(\underline{x})= A\underline{x}=\begin{pmatrix}
+		\sum^n_j a_{1j}x_j \\
+		...                \\
+		\sum^n_j a_{lj}x_j \\
+	\end{pmatrix}
 \end{equation*}
 Lemma:
 \begin{flushleft}
-  $L_A$ e' lineare
+	$L_A$ e' lineare
 \end{flushleft}
 Corollario
 \begin{flushleft}
-  $\forall A,C \in Mat_{lxn}(K)$ sia 
+	$\forall A,C \in Mat_{lxn}(K)$ sia
 \end{flushleft}
 \begin{equation*}
-  L_A=L_C \iff A=C
+	L_A=L_C \iff A=C
 \end{equation*}
+\section{Applicazioni lineari}
+\subsection{Teorema di struttura}
+\begin{flushleft}
+	Sia $v^o \in \mathbb{R}^n$ una soluzione del sistema lineare $Ax=b$ di ordine n. Allora ogni altra soluzione e' della forma $v=v^o+w$, dove $w \in \mathbb{R}^n$ e' una soluzione del sistema
+	omogeneo $Ax=O$. In altre parole, se $L \subseteq \mathbb{R}^n$ e' l'insieme delle soluzioni del sistema $Ax=b$ e $W \subseteq \mathbb{R}^n$ e' l'insieme delle soluzioni del sistema omogeneo associato
+	$Ax=O$, si ha:
+\end{flushleft}
+\begin{equation*}
+	L=v^o+W=\{ v^o +w| w\in W\}
+\end{equation*}
+\begin{flushleft}
+	In particolare $v^o$ e' l'unica soluzione del sistema se e solo se le colonne di A sono linearmente indipendenti
+\end{flushleft}
+\subsection{Definizione}
+\begin{flushleft}
+	Sia $A \in M_{m,n}(\mathbb{R})$ una matrice con m righe ed n colonne, cioe:
+\end{flushleft}
+\begin{equation*}
+	A = \begin{vmatrix}
+		a_{11} & \dots  & a_{1n} \\
+		\vdots & \vdots & \vdots \\
+		a_{m1} & \dots  & a_{mn}
+	\end{vmatrix}=\begin{vmatrix}
+		\\
+		A^1 & \dots & A^n \\
+		\\
+	\end{vmatrix}
+\end{equation*}
+\begin{flushleft}
+	con $A^1,...,A^n \in \mathbb{R}^n$. Allora definiamo un'applicazione $L_A: \mathbb{R}^n \to \mathbb{R}^n$ ponendo
+\end{flushleft}
+\begin{equation*}
+	L_A(x) = \begin{vmatrix}
+		a_{11}x_1+ \dots + a_{1n}x_n \\
+		\vdots                       \\
+		a_{m1}x_1+ \dots + a_{mn}x_n
+	\end{vmatrix}=x_1A^1+...+x_nA^n \in \mathbb{R}^n
+\end{equation*}
+\begin{flushleft}
+	per ogni $x \in \mathbb{R}^n$.Nota che x e' soluzione del sistema $Ax=b$ se e solo se $L_A(x)=b$.
+	A volte invece di scrivere $L_A(x)$ scriveremo Ax o anche $A\begin{vmatrix}
+			x_1    \\
+			\vdots \\
+			x_n
+		\end{vmatrix}
+	$
+\end{flushleft}
+Osservazione 5.2:
+\begin{flushleft}
+	Perche $L_A(x)$ o Ax abbiano senso occorre che il numero di colonne di A coincida col numero di coordinate
+	di righe del vettore x
+\end{flushleft}
+Quest' applicazione ha due proprieta' fondamentali:
+\begin{equation*}
+	L_A(x+y)=L_A(x)+L_A(y) \quad \text{e} \quad L_A(\lambda x)=\lambda L_A(x)
+\end{equation*}
+quindi praticamente per funzionare vuol dire che deve essere lineare
+\subsection{Definizione}
+\begin{flushleft}
+	Una applicazione (o trasformazione) lineare fra due spazi vettoriali V e We' una funzione
+	$T: V \to W$ tale che:
+\end{flushleft}
+\begin{enumerate}
+	\item $T(v_1+v_2)=T(v_1)+T(v_2)$ diremo che T e' addittiva
+	\item $T(\lambda v)=\lambda T(v)$ diremo che T e' omogenea
+\end{enumerate}
+\begin{flushleft}
+	In altre parole, un'applicazione lineare trasforma (rispetta,conserva) le operazioni dallo spazio di partenza
+	in quello d'arrivo. Se V=W, si parla di endomorfismo (od operatore lineare)
+\end{flushleft}
+\begin{flushleft}
+	Osservazione: Perche' T sia lineare deve soddisfare (1) e (2). Infatti esistono funzioni non lineari che soddisfano (2) ma non (1)
+	o viceversa
+\end{flushleft}
+\begin{flushleft}
+	Osservazione: Se T e' lineare, allora T(0)=0
+\end{flushleft}
+\subsection{Proposizione}
+\begin{flushleft}
+	Siano V e W due spazi vettoriali, $\{v_1,...,v_n \}$ una base di V e $w_1,...,w_n$ vettori qualunque di W.
+	Allora esiste un un'unica applicazione lineare $T: V \to W$ tale che $T(v_j)=w_j$ per $j=1,...,n$. L'applicazione T e' definita da
+\end{flushleft}
+\begin{equation*}
+	T(\alpha_1 v_1+...+\alpha_n v_n)=\alpha_1 w_1+...+\alpha_n w_n
+\end{equation*}
+per tutti gli $\alpha_1,..,\alpha_n \in \mathbb{R}$
+\subsection{Corollario}
+\begin{flushleft}
+	Siano V e W due spazi vettoriali, $\{ v_1,...,v_n \}$ una base di V, e $S,T:V\to W$ due applicazioni lineari.
+	Supponiamo che si abbia $S(v_j)=T(v_j)$ per j=1,...,n. Allora $S \cong T$, cioe' $S(v)=T(v)$ per tutti i vettori $v \in V$
+\end{flushleft}
+\subsection{Proposizione}
+Siano $A,B \in M_{m,n}$ due matrici. Allora $L_A \cong L_B$ se e solo se $A=B$.
 \end{document}
 
