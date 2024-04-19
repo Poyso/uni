@@ -1027,4 +1027,40 @@ Sia $T: V\to W$ un'applicazione lineare allora:
 \begin{flushleft}
 	Per ogni $n,m \in \mathbb{N}$ lo spazio $L(\mathbb{R}^n\mathbb{R}^n)$ e' isomorfo allo spazio delle matrici $M_{m,n}(\mathbb{R})$.In paritcolare, lo spazio duale ($\mathbb{R}^n$) e' isomorfo allo spazio dei vettori riga $M_{1,n}(\mathbb{R})$
 \end{flushleft}
+\section{Sistemi lineari}
+\subsection{Sistemi a scala}
+\begin{flushleft}
+	Una matrice a scala e' una matrice m x n siifatta:
+\end{flushleft}
+\includegraphics[bb=0 0 350 100]{sistema-scala.png}
+\begin{flushleft}
+	dove una * indica che puo' esserci qualsiasi cosa. I numeri $p_1...,p_r \in \mathbb{R}^*$
+	,tutti non nulli, sono i pivot della matrice a scala. Un sistema a scala e' un sistema lineare
+	la cui matrice dei coefficienti e' una matrice a scala
+\end{flushleft}
+\subsubsection{Lemma}
+\begin{flushleft}
+	Sia $S \in M_{m,n}(\mathbb{R})$ una matrice a scala con r pivot, e poniamo
+\end{flushleft}
+\begin{equation*}
+	V_r=\{ \begin{vmatrix}
+		b_1    \\
+		\vdots \\
+		b_r    \\
+		0      \\
+		\vdots \\
+		0
+	\end{vmatrix} \in \mathbb{R}^m | b_1,...,b_r \in \mathbb{R} \}= Span(e_1,...,e_r) \subset \mathbb{R}^m
+\end{equation*}
+\begin{flushleft}
+	Indichiamo con $S^{jk}$ la colonna di S in cui compare il k-esimo pivot $p_k$, per k=1,...,r.
+	Allora $Im(S)=V_r$,$rg(S)=r$ e $\{S^{j1},...,S^{jr} \}$ e' una base di $Im(S)$
+\end{flushleft}
+\subsubsection{Corollario}
+\begin{flushleft}
+	Sia $S \in M_{m,n}(\mathbb{R})$ una matrice a scala rango di r. Allora il sistema
+	Sx=c ha soluzione se e solo se le ultime m-r coordinate di c sono zero, e lo spazio delle soluzioni
+	del sistema omogeneo Sx=O ha dimensione n-r
+\end{flushleft}
+
 \end{document}
